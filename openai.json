@@ -59,8 +59,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/MarketDepthResponse"
                 },
                 "examples": {
                   "1": {
@@ -917,7 +916,11 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderDetailsResponse"
+                }
+              }
             }
           }
         },
@@ -952,7 +955,11 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderHistoryResponse"
+                }
+              }
             }
           }
         },
@@ -995,7 +1002,14 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BalanceItem"
+                  }
+                }
+              }
             }
           }
         },
@@ -1755,10 +1769,9 @@
         "description": "## Запрос и получение JWT токена:\n\nRapira использует стандартную схему JWT авторизации (документация: [https://jwt.io/](https://jwt.io/) и [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)), то есть для работы с методами API вначале нужно запросить у сервера JWT токен, который уже будет использоваться в Bearer аутентификации.\n\nПолученный токен нужно сохранить и использовать его для запросов. Не нужно создавать новый токен на каждый запрос!\n\nВремя жизни JWT токена ограничено, и после его истечения токен становится недействительным.\n\nВремя жизни JWT определяется _параметрами API ключа_, и может быть изменено в настройках для каждого API ключа. Минимальное время жизни JWT 30 минут, максимальное 24 часа. По умолчанию значение TTL 24 часа.\n\nПараметры JWT запроса:\n\n- exp - опциональный, время жизни JWT запроса. Не устанавливать его слишком большим и не оставляйте пустым, если вы не планируете переиспользовать запрос многократно.\n    \n- jti - обязательный, уникальный идентификатор запроса.\n    \n- алгоритм подписи JWT - **RS256**\n    \n- все остальные опциональные параметры не используются и устанавливать их не обязательно.\n    \n\nДля декодирования и проверки токенов можно использовать онлайн отладчик на сайте [https://jwt.io/](https://jwt.io/)",
         "requestBody": {
           "content": {
-            "*/*": {
+            "application/json": {
               "schema": {
-                "type": "string",
-                "example": "\"{\\n    \\\"kid\\\": \\\"73278678-e812-43f4-a541-03f0386fc90d\\\",\\n    \\\"jwt_token\\\": \\\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2OTM0MjExMjIsImp0aSI6IjViNTY3ZDIyODc5ZWE1Zjk2ZDU2YTQ2YiJ9.e6nYQf1aUxtOXbCMwVqA1NWRTtGhxIlt0F0RvAOM_SKcqigGwXj0Z_3CwklDaDR8UNbacJkjrHZwJ1lWCR_ZUu3rM_6nPib5AqdZwGv6-XnU7a9X0ydO_w9SaM-4Q3osSjm-_nv5KNE1Ffi7y_MBaQAHEmM6fi8lUIK3ysybvGl4xMAz5AC9_v_8HwtQBvePZZgfUkZDLJeTFPYH8hthHluA_i3lkJf1AnfF41DkOFnNWjBzb7GVGtwXXX-vJa-3agv_XrgVZPPt9taUBwDiLXHBFnLQe19hhrRjN75V6587_thntz-4YulxJFsTjRI4SqlDpL4k2FMR26Kfur6BOQ\\\"\\n}\""
+                "$ref": "#/components/schemas/JwtRequest"
               }
             }
           }
@@ -1777,7 +1790,11 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
             }
           }
         },
@@ -2050,8 +2067,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/OrderAddResponse"
                 },
                 "examples": {
                   "1": {
@@ -2075,8 +2091,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/OrderAddResponse"
                 },
                 "examples": {
                   "1": {
@@ -4108,6 +4123,268 @@
   },
   "components": {
     "schemas": {
+      "OrderSide": {
+        "type": "string",
+        "enum": [
+          "BUY",
+          "SELL"
+        ]
+      },
+      "OrderType": {
+        "type": "string",
+        "enum": [
+          "LIMIT_PRICE",
+          "MARKET_PRICE"
+        ]
+      },
+      "OrderStatus": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "PARTIALLY_FILLED",
+          "FILLED",
+          "CANCELLED",
+          "TRADING",
+          "COMPLETED",
+          "CANCELED"
+        ]
+      },
+      "RapiraCurrency": {
+        "type": "string",
+        "enum": [
+          "RUB",
+          "USDT"
+        ]
+      },
+      "OrderAddResponse": {
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "isWorking"
+        ],
+        "properties": {
+          "data": {
+            "type": "string",
+            "nullable": true,
+            "description": "Order identifier"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "isWorking": {
+            "type": "integer",
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "totalPage": {
+            "type": "integer",
+            "nullable": true
+          },
+          "totalElement": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDetailsResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "symbol",
+          "direction",
+          "amount",
+          "price",
+          "tradedAmount"
+        ],
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "description": "Order identifier"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OrderStatus"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/OrderSide"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "tradedAmount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderHistoryItem": {
+        "type": "object",
+        "required": [
+          "orderId",
+          "symbol",
+          "direction",
+          "amount",
+          "price",
+          "tradedAmount",
+          "status"
+        ],
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/OrderSide"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "tradedAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OrderStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderHistoryResponse": {
+        "type": "object",
+        "required": [
+          "content",
+          "totalPages"
+        ],
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderHistoryItem"
+            }
+          },
+          "totalPages": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BalanceItem": {
+        "type": "object",
+        "required": [
+          "unit",
+          "balance"
+        ],
+        "properties": {
+          "unit": {
+            "$ref": "#/components/schemas/RapiraCurrency"
+          },
+          "balance": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarketDepthItem": {
+        "type": "object",
+        "required": [
+          "price",
+          "amount"
+        ],
+        "properties": {
+          "price": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarketDepthSide": {
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketDepthItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarketDepthResponse": {
+        "type": "object",
+        "required": [
+          "code",
+          "bid",
+          "ask"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "bid": {
+            "$ref": "#/components/schemas/MarketDepthSide"
+          },
+          "ask": {
+            "$ref": "#/components/schemas/MarketDepthSide"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JwtResponse": {
+        "type": "object",
+        "required": [
+          "token"
+        ],
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JwtRequest": {
+        "type": "object",
+        "required": [
+          "kid",
+          "jwt_token"
+        ],
+        "properties": {
+          "kid": {
+            "type": "string"
+          },
+          "jwt_token": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "LegalWalletTransactionDTO": {
         "type": "object",
         "properties": {
