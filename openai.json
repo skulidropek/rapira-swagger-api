@@ -1,0 +1,5350 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Rapira Combined API",
+    "version": "1.0.0-combined",
+    "description": "Auto-generated aggregation of Rapira OpenAPI definitions."
+  },
+  "servers": [
+    {
+      "url": "https://api.rapira.net",
+      "description": "Prod Env"
+    },
+    {
+      "url": "https://api.rapira.net"
+    },
+    {
+      "url": "http://api.rapira.net"
+    }
+  ],
+  "tags": [
+    {
+      "name": "fiat-transactions"
+    },
+    {
+      "name": "fiat-transaction"
+    }
+  ],
+  "security": [],
+  "paths": {
+    "/market/exchange-plate-mini": {
+      "post": {
+        "summary": "Get market depth",
+        "deprecated": false,
+        "description": "Получить стакан по указаннй валютной паре\n\nЕсли в response приходит {} - валютная пара указана неверно",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "symbol": {
+                    "description": "Валютная пара - symbol из https://api.rapira.net/market/symbol-thumb",
+                    "example": "BTC/USDT",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "symbol"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "ask": {
+                        "symbol": "BTC/USDT",
+                        "minAmount": 0.0002805,
+                        "highestPrice": 59500.1,
+                        "lowestPrice": 59516.1,
+                        "maxAmount": 5.643762,
+                        "items": [
+                          {
+                            "price": 59500.1,
+                            "amount": 1.1864385
+                          },
+                          {
+                            "price": 59500.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59500.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59501.4,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59501.5,
+                            "amount": 0.006103
+                          },
+                          {
+                            "price": 59501.7,
+                            "amount": 0.0428485
+                          },
+                          {
+                            "price": 59502,
+                            "amount": 0.0192185
+                          },
+                          {
+                            "price": 59502.1,
+                            "amount": 0.1142825
+                          },
+                          {
+                            "price": 59502.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59502.6,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59503,
+                            "amount": 0.0311355
+                          },
+                          {
+                            "price": 59503.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59503.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59503.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59504,
+                            "amount": 0.0005355
+                          },
+                          {
+                            "price": 59504.4,
+                            "amount": 0.028849
+                          },
+                          {
+                            "price": 59504.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59505,
+                            "amount": 0.000816
+                          },
+                          {
+                            "price": 59505.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59505.6,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59506,
+                            "amount": 0.0005355
+                          },
+                          {
+                            "price": 59506.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59506.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59507.4,
+                            "amount": 0.0002805
+                          }
+                        ],
+                        "direction": "SELL"
+                      },
+                      "bid": {
+                        "symbol": "BTC/USDT",
+                        "minAmount": 0.000046,
+                        "highestPrice": 59498,
+                        "lowestPrice": 59483.6,
+                        "maxAmount": 12.3216175,
+                        "items": [
+                          {
+                            "price": 59498,
+                            "amount": 0.095473
+                          },
+                          {
+                            "price": 59497.6,
+                            "amount": 0.0386515
+                          },
+                          {
+                            "price": 59497,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59496.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59495.8,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59495.5,
+                            "amount": 0.035029
+                          },
+                          {
+                            "price": 59495.2,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59494.6,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59494,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59493.5,
+                            "amount": 0.0003565
+                          },
+                          {
+                            "price": 59493.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59493,
+                            "amount": 0.0007245
+                          },
+                          {
+                            "price": 59492.8,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59492.5,
+                            "amount": 0.000713
+                          },
+                          {
+                            "price": 59492.2,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59492.1,
+                            "amount": 0.19067
+                          },
+                          {
+                            "price": 59492,
+                            "amount": 0.3499795
+                          },
+                          {
+                            "price": 59491.6,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59491.5,
+                            "amount": 0.0114195
+                          },
+                          {
+                            "price": 59491,
+                            "amount": 0.001104
+                          },
+                          {
+                            "price": 59490.5,
+                            "amount": 0.0110285
+                          },
+                          {
+                            "price": 59490.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59490,
+                            "amount": 0.0007245
+                          },
+                          {
+                            "price": 59489.8,
+                            "amount": 0.0003795
+                          }
+                        ],
+                        "direction": "BUY"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira"
+      }
+    },
+    "/open/aml/balance": {
+      "post": {
+        "summary": "AML balance",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **AML**\n\nПолучить количество оставшихся оплаченных проверок\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "*/*",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12AZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "balanceAml": 123
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_27moj11mnm9r0zdyl"
+      }
+    },
+    "/open/aml/check-address": {
+      "post": {
+        "summary": "Check address",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **AML**\n\nAML проверка адреса\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "chain",
+            "in": "query",
+            "description": "Сеть адреса (пример BTC / ETH /TRX / BSC / TON - chainId из https://api.rapira.net/open/token)",
+            "required": true,
+            "example": "BTC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адрес",
+            "required": true,
+            "example": "TfdjewJEWRUfdg5ewfDF",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "*/*",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9..CHLfq-a0eq3WwvxLUhd8rFObj2eHqcLB4hLQFPy0fJkkX_38u9lQ0z3KetPT29NziT0tVD5RMaTEed6z3vfP5sqhfJb0n9YtBDvQvpYRaFjnQWkqUYBUCwq9BHMCJ9K94Y0ah7zuaxekJbXUuhI674iD3x4e5ROun6sgAuhRNB2y6wP59HltuycamJI5Py8sQK_4QG6iV1g7pWGMOYPdAZWEkr2W9vpBLAMVYJFrOwti9WVOdxAaArUxzoFl_JYweWulLRe0_lNmIL0fDlyUst86X2cFjaHRhuEAqvBMT980E-IDuThy1NdWwLGFxQOe9I9Vy-KX8Kdc7d2sfc7rPg",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "content-type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
+                  "direction": "DEPOSIT",
+                  "chain": "TRX",
+                  "riskScore": 0.584,
+                  "signals": {
+                    "mixer": 0,
+                    "miner": 0,
+                    "other": 0,
+                    "payment": 0,
+                    "wallet": 0,
+                    "sanctions": 0,
+                    "ransom": 0,
+                    "gambling": 0,
+                    "scam": 0,
+                    "ico": null,
+                    "atm": 0,
+                    "malware": null,
+                    "bridge": null,
+                    "dark_market": 0,
+                    "dark_service": 0,
+                    "stolen_coins": 0,
+                    "terrorism_financing": 0,
+                    "seized_assets": 0,
+                    "exchange_mlrisk_moderate": null,
+                    "exchange_mlrisk_high": null,
+                    "p2p_exchange_mlrisk_moderate": null,
+                    "p2p_exchange_mlrisk_low": null,
+                    "p2p_exchange_mlrisk_high": null,
+                    "exchange_mlrisk_veryhigh": null,
+                    "infrastructure_as_a_service": null,
+                    "token_smart_contract": null,
+                    "illicit_actor_org": null,
+                    "exchange_fraudulent": 0,
+                    "p2p_exchange": null,
+                    "illegal_service": 0,
+                    "lending_contract": null,
+                    "risky_exchange": null,
+                    "child_exploitation": 0,
+                    "marketplace": 0,
+                    "decentralized_exchange_contract": null,
+                    "fraud_shop": null,
+                    "enforcement_action": 0,
+                    "protocol_privacy": null,
+                    "unnamed_service": null,
+                    "liquidity_pools": 0,
+                    "exchange": null,
+                    "smart_contract": null,
+                    "high_risk_jurisdiction": null,
+                    "merchant_services": null,
+                    "trusted_exchange": null,
+                    "nft_platform_collection": null,
+                    "special_measures": null,
+                    "online_pharmacy": null,
+                    "exchange_licensed": 0.103,
+                    "exchange_unlicensed": 0.896,
+                    "p2p_exchange_licensed": 0,
+                    "p2p_exchange_unlicensed": 0
+                  },
+                  "amount": null,
+                  "asset": "trx",
+                  "pdfReport": null,
+                  "status": "SUCCESS",
+                  "dirtType": null,
+                  "description": null,
+                  "addressDetailsData": null,
+                  "counterparty": {
+                    "name": null,
+                    "slug": null,
+                    "type": null,
+                    "id": null,
+                    "address": "TGkaSfv2CAN2dDJ9hzr1efpxECDuzMt"
+                  },
+                  "createTime": "2024-07-18 10:06:28",
+                  "tx": "07ed3bfcaf6f8c5030cfd1d550e0f4e42198489a601bd8b3209772a48",
+                  "fiat_code_effective": null,
+                  "uuid": "af705bt"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "2": {
+                    "summary": "нет данных",
+                    "value": {
+                      "error": "Nothing was found for the introductory parameters"
+                    }
+                  },
+                  "3": {
+                    "summary": "недостаточный баланс проверок",
+                    "value": {
+                      "code": 400,
+                      "message": "There are not enough funds for verification. Check AML balance"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_27moj11mnm9r0zdyl"
+      }
+    },
+    "/open/aml/check-transaction": {
+      "post": {
+        "summary": "Check transaction",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **AML**\n\nAML проверка транзакции\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Валюта:\n- пример 1: TRX_TRX / TON_USDT, где {chainId}\\_{coinId} из https://api.rapira.net/open/token\n- пример 2: USDTTRC20, где {apiFormat} из https://api.rapira.net/open/token",
+            "required": true,
+            "example": "USDTTRC20",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hash",
+            "in": "query",
+            "description": "Хэш транзакции\n",
+            "required": true,
+            "example": "DGgsjgrtTUIWgwrgRGUi4gWEHGw4gU24WWGHWGH",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Адрес",
+            "required": true,
+            "example": "FJefgweERGUEIBtrhhtrhijETHJethERUeh5",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "description": "DEPOSIT / WITHDRAWAL по отношению к address\n",
+            "required": true,
+            "example": "DEPOSIT",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "*/*",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9..CHLfq-a0eq3WwvxLUhd8rFObj2eHqcLB4hLQFPy0fJkkX_38u9lQ0z3KetPT29NziT0tVD5RMaTEed6z3vfP5sqhfJb0n9YtBDvQvpYRaFjnQWkqUYBUCwq9BHMCJ9K94Y0ah7zuaxekJbXUuhI674iD3x4e5ROun6sgAuhRNB2y6wP59HltuycamJI5Py8sQK_4QG6iV1g7pWGMOYPdAZWEkr2W9vpBLAMVYJFrOwti9WVOdxAaArUxzoFl_JYweWulLRe0_lNmIL0fDlyUst86X2cFjaHRhuEAqvBMT980E-IDuThy1NdWwLGFxQOe9I9Vy-KX8Kdc7d2sfc7rPg",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
+                  "direction": "DEPOSIT",
+                  "chain": "TRX",
+                  "riskScore": 0.584,
+                  "signals": {
+                    "mixer": 0,
+                    "miner": 0,
+                    "other": 0,
+                    "payment": 0,
+                    "wallet": 0,
+                    "sanctions": 0,
+                    "ransom": 0,
+                    "gambling": 0,
+                    "scam": 0,
+                    "ico": null,
+                    "atm": 0,
+                    "malware": null,
+                    "bridge": null,
+                    "dark_market": 0,
+                    "dark_service": 0,
+                    "stolen_coins": 0,
+                    "terrorism_financing": 0,
+                    "seized_assets": 0,
+                    "exchange_mlrisk_moderate": null,
+                    "exchange_mlrisk_high": null,
+                    "p2p_exchange_mlrisk_moderate": null,
+                    "p2p_exchange_mlrisk_low": null,
+                    "p2p_exchange_mlrisk_high": null,
+                    "exchange_mlrisk_veryhigh": null,
+                    "infrastructure_as_a_service": null,
+                    "token_smart_contract": null,
+                    "illicit_actor_org": null,
+                    "exchange_fraudulent": 0,
+                    "p2p_exchange": null,
+                    "illegal_service": 0,
+                    "lending_contract": null,
+                    "risky_exchange": null,
+                    "child_exploitation": 0,
+                    "marketplace": 0,
+                    "decentralized_exchange_contract": null,
+                    "fraud_shop": null,
+                    "enforcement_action": 0,
+                    "protocol_privacy": null,
+                    "unnamed_service": null,
+                    "liquidity_pools": 0,
+                    "exchange": null,
+                    "smart_contract": null,
+                    "high_risk_jurisdiction": null,
+                    "merchant_services": null,
+                    "trusted_exchange": null,
+                    "nft_platform_collection": null,
+                    "special_measures": null,
+                    "online_pharmacy": null,
+                    "exchange_licensed": 0.103,
+                    "exchange_unlicensed": 0.896,
+                    "p2p_exchange_licensed": 0,
+                    "p2p_exchange_unlicensed": 0
+                  },
+                  "amount": null,
+                  "asset": "trx",
+                  "pdfReport": null,
+                  "status": "SUCCESS",
+                  "dirtType": null,
+                  "description": null,
+                  "addressDetailsData": null,
+                  "counterparty": {
+                    "name": null,
+                    "slug": null,
+                    "type": null,
+                    "id": null,
+                    "address": "TGkaSfv2CAN2dDJ9hzr1efpxECDuzMt"
+                  },
+                  "createTime": "2024-07-18 10:06:28",
+                  "tx": "07ed3bfcaf6f8c5030cfd1d550e0f4e42198489a601bd8b3209772a48",
+                  "fiat_code_effective": null,
+                  "uuid": "af705bt"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "2": {
+                    "summary": "недостаточный баланс проверок",
+                    "value": {
+                      "code": 400,
+                      "message": "There are not enough funds for verification. Check AML balance"
+                    }
+                  },
+                  "3": {
+                    "summary": "токен введен неверно",
+                    "value": {
+                      "error": "wrong token param"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_27moj11mnm9r0zdyl"
+      }
+    },
+    "/open/aml/recheck": {
+      "post": {
+        "summary": "Recheck",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **AML**\n\nПовторная AML проверка адреса/транзакции\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "Идентификатор проверки\n",
+            "required": true,
+            "example": "503eebea8-3ca1-4d1f-ac7f-3788858a976",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "*/*",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12AZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
+                  "direction": "DEPOSIT",
+                  "chain": "TRX",
+                  "riskScore": 0.584,
+                  "signals": {
+                    "mixer": 0,
+                    "miner": 0,
+                    "other": 0,
+                    "payment": 0,
+                    "wallet": 0,
+                    "sanctions": 0,
+                    "ransom": 0,
+                    "gambling": 0,
+                    "scam": 0,
+                    "ico": null,
+                    "atm": 0,
+                    "malware": null,
+                    "bridge": null,
+                    "dark_market": 0,
+                    "dark_service": 0,
+                    "stolen_coins": 0,
+                    "terrorism_financing": 0,
+                    "seized_assets": 0,
+                    "exchange_mlrisk_moderate": null,
+                    "exchange_mlrisk_high": null,
+                    "p2p_exchange_mlrisk_moderate": null,
+                    "p2p_exchange_mlrisk_low": null,
+                    "p2p_exchange_mlrisk_high": null,
+                    "exchange_mlrisk_veryhigh": null,
+                    "infrastructure_as_a_service": null,
+                    "token_smart_contract": null,
+                    "illicit_actor_org": null,
+                    "exchange_fraudulent": 0,
+                    "p2p_exchange": null,
+                    "illegal_service": 0,
+                    "lending_contract": null,
+                    "risky_exchange": null,
+                    "child_exploitation": 0,
+                    "marketplace": 0,
+                    "decentralized_exchange_contract": null,
+                    "fraud_shop": null,
+                    "enforcement_action": 0,
+                    "protocol_privacy": null,
+                    "unnamed_service": null,
+                    "liquidity_pools": 0,
+                    "exchange": null,
+                    "smart_contract": null,
+                    "high_risk_jurisdiction": null,
+                    "merchant_services": null,
+                    "trusted_exchange": null,
+                    "nft_platform_collection": null,
+                    "special_measures": null,
+                    "online_pharmacy": null,
+                    "exchange_licensed": 0.103,
+                    "exchange_unlicensed": 0.896,
+                    "p2p_exchange_licensed": 0,
+                    "p2p_exchange_unlicensed": 0
+                  },
+                  "amount": null,
+                  "asset": "trx",
+                  "pdfReport": null,
+                  "status": "SUCCESS",
+                  "dirtType": null,
+                  "description": null,
+                  "addressDetailsData": null,
+                  "counterparty": {
+                    "name": null,
+                    "slug": null,
+                    "type": null,
+                    "id": null,
+                    "address": "TGkaSfv2CAN2dDJ9hzr1efpxECDuzMt"
+                  },
+                  "createTime": "2024-07-18 10:06:28",
+                  "tx": "07ed3bfcaf6f8c5030cfd1d550e0f4e42198489a601bd8b3209772a48",
+                  "fiat_code_effective": null,
+                  "uuid": "af705bt"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "code": 500,
+                  "message": "The request could not be completed. Check the correctness of the entered data or repeat the request later."
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_27moj11mnm9r0zdyl"
+      }
+    },
+    "/open/deposit/records": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get deposits",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pageNo": {
+                    "type": "integer",
+                    "example": "0"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "example": "10"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "example": "TRX"
+                  },
+                  "network": {
+                    "type": "string",
+                    "example": "Tether TRC20"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oym1l1lly0lf22"
+      }
+    },
+    "/open/deposit_address": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get address by currency",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "usdt-trc20"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oymblly0u44h"
+      },
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Create address by currency",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": ""
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "usdt-trc20"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oymblly0u44h"
+      }
+    },
+    "/open/deposit_address/details": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get address details by id",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "309"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oymblly0u44h"
+      }
+    },
+    "/open/deposit_address/list": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get address list by currency",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "usdt-trc20"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oymblly0u44h"
+      }
+    },
+    "/open/deposit_address/use/stop": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Stop use address",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string",
+                    "example": "TLFw93fCuSvUDbuRYk6BxzxZg1NvwCr9Nx"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "example": "usdt-trc20"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_1nq410lulpk4vk"
+      }
+    },
+    "/open/fiat-transactions": {
+      "get": {
+        "summary": "Fiat Transactions",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **README**\n\nПолучить постраничный список фиатных транзакций, связанных с его аккаунтом, с возможностью фильтрации.",
+        "tags": [
+          "fiat-transactions"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "description": "Номер страницы (начинается с 1)",
+            "required": false,
+            "example": "1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Количество записей на странице",
+            "required": false,
+            "example": "10",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionType",
+            "in": "query",
+            "description": "Тип транзакции (WITHDRAW, RECHARGE). При отсутствии значения или неправильном значении - все записи (отсутствие фильтрации)",
+            "required": false,
+            "example": "WITHDRAW",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT токен",
+            "required": true,
+            "example": "Bearer eyJhbGciiJSUzI1NiJ9.eyJzdWIiOiIxNjIwMCIsImV4cCI6MTc0NDc5ODIwNywiYXBpX2tpZCI6ImNjNmI0ZTU5LTc5ZmQtNDE3MC1hZTU2LTU0YjAwNWJmY2Q5OSJ9.gdYkdQUL4TFC1RGNJrhmio1nu0X9jx1R1pYGdJYo5qOrijL4SJ4fUyJ1ZMVMuE3mdODG0BefggstU0Bsm_XGshuCQ6sGH586BmVX0obA2ixXhHqjV9lXPquL7Bi1XlBxMFNXZpnGxjmvigXV5t5n7bcjC_jjE2TIqJDCG5WRQBp5ez499rKwQNp-THLBq99dbVGDrxF8B2qYgSN1gu89Awxc8PxUctE_aiQ30jKDcsklut6xn3DkWRHxHSwnVXnck4dd9M6JWPbY-HfgCz7lJ9TsJC4vxEYnVcQByxOwVYE_gdFGbjHp0iHxSwBj_aDTDS-3o2ri5oq0Db6FaJueFA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "description": "net.rapira.trade.commons.domain.member.dto.LegalWalletTransactionDTO",
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "",
+                            "format": "int64"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "username": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "realName": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "amount": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "fee": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "feeType": {
+                            "type": "string",
+                            "description": "",
+                            "enum": [
+                              "FIXED",
+                              "PERCENT",
+                              "FREE"
+                            ],
+                            "x-apifox-enum": [
+                              {
+                                "value": "FIXED",
+                                "name": "FIXED",
+                                "description": "FIXED"
+                              },
+                              {
+                                "value": "PERCENT",
+                                "name": "PERCENT",
+                                "description": "PERCENT"
+                              },
+                              {
+                                "value": "FREE",
+                                "name": "FREE",
+                                "description": "FREE"
+                              }
+                            ]
+                          },
+                          "feeNum": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "address": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "amountWithFee": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "unit": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "creationTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "endTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "transactionId": {
+                            "type": "integer",
+                            "description": "",
+                            "format": "int64"
+                          },
+                          "officePass": {
+                            "description": "",
+                            "type": "object",
+                            "properties": {
+                              "passId": {
+                                "type": "integer",
+                                "description": "",
+                                "format": "int64"
+                              },
+                              "numOfVisits": {
+                                "type": "integer",
+                                "description": ""
+                              },
+                              "fullName": {
+                                "type": "string",
+                                "description": ""
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "",
+                                "enum": [
+                                  "ON_AGREE",
+                                  "REVOKE",
+                                  "DECLINED",
+                                  "CURRENT",
+                                  "REGISTER",
+                                  "WORKED_OUT",
+                                  "OVERDUE",
+                                  "READY_TO_GIVE"
+                                ],
+                                "x-apifox-enum": [
+                                  {
+                                    "value": "ON_AGREE",
+                                    "name": "ON_AGREE",
+                                    "description": "ON_AGREE"
+                                  },
+                                  {
+                                    "value": "REVOKE",
+                                    "name": "REVOKE",
+                                    "description": "REVOKE"
+                                  },
+                                  {
+                                    "value": "DECLINED",
+                                    "name": "DECLINED",
+                                    "description": "DECLINED"
+                                  },
+                                  {
+                                    "value": "CURRENT",
+                                    "name": "CURRENT",
+                                    "description": "CURRENT"
+                                  },
+                                  {
+                                    "value": "REGISTER",
+                                    "name": "REGISTER",
+                                    "description": "REGISTER"
+                                  },
+                                  {
+                                    "value": "WORKED_OUT",
+                                    "name": "WORKED_OUT",
+                                    "description": "WORKED_OUT"
+                                  },
+                                  {
+                                    "value": "OVERDUE",
+                                    "name": "OVERDUE",
+                                    "description": "OVERDUE"
+                                  },
+                                  {
+                                    "value": "READY_TO_GIVE",
+                                    "name": "READY_TO_GIVE",
+                                    "description": "READY_TO_GIVE"
+                                  }
+                                ]
+                              },
+                              "fromTime": {
+                                "type": "string",
+                                "description": "",
+                                "x-apifox-mock": "@datetime"
+                              },
+                              "toTime": {
+                                "type": "string",
+                                "description": "",
+                                "x-apifox-mock": "@datetime"
+                              }
+                            },
+                            "x-apifox-orders": [
+                              "passId",
+                              "numOfVisits",
+                              "fullName",
+                              "status",
+                              "fromTime",
+                              "toTime"
+                            ]
+                          },
+                          "rejectCause": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "paymentType": {
+                            "description": "",
+                            "type": "object",
+                            "properties": {
+                              "key": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            },
+                            "x-apifox-orders": [
+                              "key"
+                            ]
+                          },
+                          "data": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "bookBotUrl": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "processingUrl": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "x-apifox-orders": [
+                          "id",
+                          "type",
+                          "username",
+                          "realName",
+                          "amount",
+                          "fee",
+                          "feeType",
+                          "feeNum",
+                          "address",
+                          "amountWithFee",
+                          "unit",
+                          "status",
+                          "creationTime",
+                          "endTime",
+                          "transactionId",
+                          "officePass",
+                          "rejectCause",
+                          "paymentType",
+                          "data",
+                          "bookBotUrl",
+                          "processingUrl"
+                        ]
+                      },
+                      "description": ""
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalElements": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "content",
+                    "currentPage",
+                    "totalPages",
+                    "totalElements"
+                  ]
+                },
+                "example": {
+                  "content": [
+                    {
+                      "id": 96368,
+                      "type": "WITHDRAW",
+                      "amount": "3000000",
+                      "fee": "0",
+                      "feeType": "FREE",
+                      "feeNum": "0",
+                      "amountWithFee": "3000000",
+                      "unit": "RUB",
+                      "status": "CANCELED",
+                      "creationTime": "2025-04-15 12:47:47",
+                      "endTime": "2025-04-15 12:47:55",
+                      "paymentType": {
+                        "paymentTypeName": "Moscow",
+                        "category": "CASH"
+                      }
+                    },
+                    {
+                      "id": 96068,
+                      "type": "WITHDRAW",
+                      "amount": "200000",
+                      "fee": "8000",
+                      "feeType": "PERCENT",
+                      "feeNum": "0.04",
+                      "amountWithFee": "208000",
+                      "unit": "RUB",
+                      "status": "FAIL",
+                      "creationTime": "2024-12-23 13:40:01",
+                      "endTime": "2024-12-23 13:40:24",
+                      "paymentType": {
+                        "paymentTypeName": "Kazan",
+                        "category": "CASH"
+                      }
+                    }
+                  ],
+                  "currentPage": 1,
+                  "totalPages": 27,
+                  "totalElements": 267
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_45i1wk30m9ljiq43"
+      }
+    },
+    "/open/fiat-transactions/{transactionId}": {
+      "get": {
+        "summary": "Fiat Withdraw For Record",
+        "deprecated": false,
+        "description": "Требуемый уровень доступа: **README**\n\nПолучить объект с полной информацией о транзакции, включая сумму, статус, комиссии, временные метки и другие детали.",
+        "tags": [
+          "fiat-transaction"
+        ],
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "description": "Идентификационный номер транзакции",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT токен",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjIwMCIsImV4cCI6MTc0NDk2NTk5MSwiYXBpX2tpZCI6ImNjNmI0ZTU5LTc5ZmQtNDE3MC1hZTU2LTU0YjAwNWJmY2Q5OSJ9.PQfcCDtpX5Fl2wgR_bXsZTBSmL77k2DjO1pDlE8f5Ek7Ps_OArqju0byH0-6i7fJ2yVlWjKfamU7LNgSdtAX3tN4zrxI_2GcgYstfCJXpGg68lQilqjw1UBrcJ0ccgiYLq4AxS7abQxcSTIQt_ZeI1RPonuvp4-Kp4laKi5yWcAfk4a1ZTgKF-RaJdnNo8X2XwUrazY9abd-zUp5aPvsZA7rqdX2zHYOLCK90_BPFIgoIbLQwL3hlvTejOGaac3CDWmlCmSvrLaoFSeSrzIRVAgoBXv7dtJdj83gjdnOiWA2Pt4FDoo53lZX6ZApDnyceY_GO2Vac0gNUy93uxOOyQ",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "username": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "realName": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "amount": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "fee": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "feeType": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "feeNum": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "amountWithFee": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "creationTime": {
+                      "type": "string",
+                      "description": "",
+                      "x-apifox-mock": "@datetime"
+                    },
+                    "endTime": {
+                      "type": "string",
+                      "description": "",
+                      "x-apifox-mock": "@datetime"
+                    },
+                    "transactionId": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    },
+                    "officePass": {
+                      "description": "",
+                      "type": "object",
+                      "properties": {
+                        "passId": {
+                          "type": "integer",
+                          "description": "",
+                          "format": "int64"
+                        },
+                        "numOfVisits": {
+                          "type": "integer",
+                          "description": ""
+                        },
+                        "fullName": {
+                          "type": "string",
+                          "description": ""
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": ""
+                        },
+                        "paymentType": {
+                          "description": "Уточнено",
+                          "type": "object",
+                          "properties": {
+                            "paymentTypeId": {
+                              "type": "integer",
+                              "description": "",
+                              "format": "int64"
+                            },
+                            "paymentTypeName": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "category": {
+                              "type": "string",
+                              "description": ""
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "paymentTypeId",
+                            "paymentTypeName",
+                            "category"
+                          ]
+                        }
+                      },
+                      "x-apifox-orders": [
+                        "passId",
+                        "numOfVisits",
+                        "fullName",
+                        "status",
+                        "paymentType"
+                      ]
+                    },
+                    "rejectCause": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "data": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "paymentType": {
+                      "description": "Уточнено",
+                      "type": "object",
+                      "properties": {
+                        "paymentTypeId": {
+                          "type": "integer",
+                          "description": "",
+                          "format": "int64"
+                        },
+                        "paymentTypeName": {
+                          "type": "string",
+                          "description": ""
+                        },
+                        "category": {
+                          "type": "string",
+                          "description": ""
+                        }
+                      },
+                      "x-apifox-orders": [
+                        "paymentTypeId",
+                        "paymentTypeName",
+                        "category"
+                      ]
+                    },
+                    "bookBotUrl": {
+                      "type": "string",
+                      "description": ""
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "id",
+                    "type",
+                    "username",
+                    "realName",
+                    "amount",
+                    "fee",
+                    "feeType",
+                    "feeNum",
+                    "address",
+                    "amountWithFee",
+                    "unit",
+                    "status",
+                    "creationTime",
+                    "endTime",
+                    "transactionId",
+                    "officePass",
+                    "rejectCause",
+                    "data",
+                    "paymentType",
+                    "bookBotUrl"
+                  ]
+                },
+                "example": {
+                  "id": 96359,
+                  "type": "RECHARGE",
+                  "amount": "400000",
+                  "fee": "16000",
+                  "feeType": "PERCENT",
+                  "feeNum": "0.04",
+                  "amountWithFee": "384000",
+                  "unit": "RUB",
+                  "status": "SUCCESS",
+                  "creationTime": "2025-04-06 19:04:06",
+                  "endTime": "2025-04-06 19:04:24",
+                  "paymentType": {
+                    "paymentTypeName": "Kazan",
+                    "category": "CASH"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Cant find resource for id: 963715"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_45i1wk30m9ljiq43"
+      }
+    },
+    "/open/generate_jwt": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Generate JWT token upd",
+        "description": "## Запрос и получение JWT токена:\n\nRapira использует стандартную схему JWT авторизации (документация: [https://jwt.io/](https://jwt.io/) и [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)), то есть для работы с методами API вначале нужно запросить у сервера JWT токен, который уже будет использоваться в Bearer аутентификации.\n\nПолученный токен нужно сохранить и использовать его для запросов. Не нужно создавать новый токен на каждый запрос!\n\nВремя жизни JWT токена ограничено, и после его истечения токен становится недействительным.\n\nВремя жизни JWT определяется _параметрами API ключа_, и может быть изменено в настройках для каждого API ключа. Минимальное время жизни JWT 30 минут, максимальное 24 часа. По умолчанию значение TTL 24 часа.\n\nПараметры JWT запроса:\n\n- exp - опциональный, время жизни JWT запроса. Не устанавливать его слишком большим и не оставляйте пустым, если вы не планируете переиспользовать запрос многократно.\n    \n- jti - обязательный, уникальный идентификатор запроса.\n    \n- алгоритм подписи JWT - **RS256**\n    \n- все остальные опциональные параметры не используются и устанавливать их не обязательно.\n    \n\nДля декодирования и проверки токенов можно использовать онлайн отладчик на сайте [https://jwt.io/](https://jwt.io/)",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"kid\\\": \\\"73278678-e812-43f4-a541-03f0386fc90d\\\",\\n    \\\"jwt_token\\\": \\\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2OTM0MjExMjIsImp0aSI6IjViNTY3ZDIyODc5ZWE1Zjk2ZDU2YTQ2YiJ9.e6nYQf1aUxtOXbCMwVqA1NWRTtGhxIlt0F0RvAOM_SKcqigGwXj0Z_3CwklDaDR8UNbacJkjrHZwJ1lWCR_ZUu3rM_6nPib5AqdZwGv6-XnU7a9X0ydO_w9SaM-4Q3osSjm-_nv5KNE1Ffi7y_MBaQAHEmM6fi8lUIK3ysybvGl4xMAz5AC9_v_8HwtQBvePZZgfUkZDLJeTFPYH8hthHluA_i3lkJf1AnfF41DkOFnNWjBzb7GVGtwXXX-vJa-3agv_XrgVZPPt9taUBwDiLXHBFnLQe19hhrRjN75V6587_thntz-4YulxJFsTjRI4SqlDpL4k2FMR26Kfur6BOQ\\\"\\n}\""
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_ks50we12lly16rmr"
+      }
+    },
+    "/open/market/pairs": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Pairs",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9..SjZWHz43CZW_pszA4B47WPKDfvZ6vEhKnNQ4ZRpK8U7VAycVHK1mdP1qkUXdpoQ7crLs8g-LBDYPomS02WH0xzNjoB970qZu6raQYxu6rH1KVhxvOGPaco6WXUxB0x0B4lv9bZgiXDSOx9FxjoxrCKMJ_JjrS-E3vKHgxPZVYFP6yaauKRjwfbL_y4lTs_CAo-B3BadFUd-tsFNW2r4_J7SPbsZRNY0A4-HtxfPpsgcUlZrXNd9y4sX9zjgF5h3lSUkaNVHwb5DVqUhHC2e9bvPIavT8JgXHWC2es6mCp_UKsVP9E3O93G7EovL8QTMHa3fwkcek0rDDC6IrpkxxTA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/market/rates": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get rates JSON",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_k9a142dluug0b23"
+      }
+    },
+    "/open/market/rates_xml": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get rates XML",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/xml"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_k9a142dluug0b23"
+      }
+    },
+    "/open/my-spot-fee": {
+      "get": {
+        "summary": "Get spot fees",
+        "deprecated": false,
+        "description": "Получить информацию о комиссиях по торговым парам",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer ***",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "net.rapira.trade.commons.domain.commoncore.api.MessageResult",
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": [
+                  {
+                    "id": 6,
+                    "level": "5",
+                    "symbol": "USDT/RUB",
+                    "makerFee": 0,
+                    "takerFee": 0
+                  },
+                  {
+                    "id": 12,
+                    "level": "5",
+                    "symbol": "BTC/USDT",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  },
+                  {
+                    "id": 19,
+                    "level": "5",
+                    "symbol": "TRX/USDT",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  },
+                  {
+                    "id": 25,
+                    "level": "5",
+                    "symbol": "ETH/USDT",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  },
+                  {
+                    "id": 31,
+                    "level": "5",
+                    "symbol": "ETH/BTC",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  },
+                  {
+                    "id": 37,
+                    "level": "5",
+                    "symbol": "USDC/USDT",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  },
+                  {
+                    "id": 43,
+                    "level": "5",
+                    "symbol": "BNB/USDT",
+                    "makerFee": 0.0014,
+                    "takerFee": 0.0015
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_b2td1p2dmea6webh"
+      }
+    },
+    "/open/order/add": {
+      "post": {
+        "summary": "Add exchange order",
+        "deprecated": false,
+        "description": "Создать ордер на обмен валюты на бирже\n\nТребуемый уровень доступа: **TRADING**",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12AZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "symbol": {
+                    "description": "Валютная пара - symbol из https://api.rapira.net/market/symbol-thumb",
+                    "example": "BTC/USDT",
+                    "type": "string"
+                  },
+                  "price": {
+                    "description": "Цена ордера (ненулевая если type = LIMIT_PRICE)",
+                    "example": "0",
+                    "type": "string"
+                  },
+                  "amount": {
+                    "description": "Сумма валюты к продаже",
+                    "example": "1",
+                    "type": "string"
+                  },
+                  "direction": {
+                    "description": "Направление ордера по отношению к первой в паре валюте (SELL / BUY)",
+                    "example": "SELL",
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "Тип ордера (LIMIT_PRICE / MARKET_PRICE)",
+                    "example": "MARKET_PRICE",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "symbol",
+                  "price",
+                  "amount",
+                  "direction",
+                  "type"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "data": "C172667426977010003",
+                      "code": 0,
+                      "message": "Успешно",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Оборот ордера меньше минимального",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Оборот ордера меньше минимального 1",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "2": {
+                    "summary": "Недопустимая сумма обмена",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "недопустимое количество",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "3": {
+                    "summary": "Цена невалидна (лимитный ордер)",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "заоблачные цены",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "4": {
+                    "summary": "Неверная пара",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "неподдерживаемая монета",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_1rx21fugm193lwwx"
+      }
+    },
+    "/open/order/details": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Order details",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{JWT}}"
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "C200000000000000000"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_4dfvd133lwyxuv1k"
+      }
+    },
+    "/open/order/history": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Order history",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{JWT}}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_4dfvd133lwyxuv1k"
+      }
+    },
+    "/open/order/{orderId}/cancel": {
+      "post": {
+        "summary": "Cancel order",
+        "deprecated": false,
+        "description": "**Требуемый доступ API ключа - TRADING**\n\nОтменить ордер на обмен",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "id ордера, который нужно отменить",
+            "required": true,
+            "example": "C206548975054687453",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT token",
+            "required": false,
+            "example": "eyJhbGciOiJNiJ9.eyJzdWIiOiIxNjIwMCIsImV4cCI6MTc0MDQ4MDg0OSwiYXBpX2tpZCI6ImNjNmI0ZTU5LTc5ZmQtNDE3MC1hZTU2LTU0YjAwNWJmY2Q5OSJ9.Lw2Nk4M8trDMmXgRy49CmyRqaRr1Xz8pqV8dzBzASxxe9fv6mPI6aN2MCrxlCvprt9AwioCcXpCkhnWsxcNWX0QlzgnCemaT2qz_1j20sbFQS0ZW1MUQRB-58bAhJ--cErWgN40puS5ac8QSJWYGvyR2VATv1_SgNiYopwfAs0qXNyCFvdQyVInG_4CmC7ziDbNCI4mIWybjgN96HoqpeuL0RMuEu61kac9DaoIkV_DWqpJFB_wA8AKWuYayQcMuUizsZ17gJ6OSxcbh-gfNrmlmFwavwPvr6nMiCoGpXGZWYruxpW44KFVkD7Umm2bfHmCVuKDUl5R6Ktv0O5UySA",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "message": "Успешно"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "2": {
+                    "summary": "Ордер находится в неподходящем статусе",
+                    "description": "",
+                    "value": {
+                      "message": "недействительный ордер, не торговый статус"
+                    }
+                  },
+                  "3": {
+                    "summary": "Ордер не найден",
+                    "description": "",
+                    "value": {
+                      "message": "недействительный ордер, не торговый статус"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_19gwu92rm8msa13b"
+      }
+    },
+    "/open/system/time": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get server time",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_dybn2qlvn4icf8"
+      }
+    },
+    "/open/token": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Token",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxOTciLCJleHAiOjE3MjA1OTQ0OTYsImFwaV9raWQiOiI1MTQwYzNmMi1jMzZjLTQ1NDgtYWYxOC1hNWViZDgwOWI3OGMifQ.-LBDYPomS02WH0xzNjoB970qZu6raQYxu6rH1KVhxvOGPaco6WXUxB0x0B4lv9bZgiXDSOx9FxjoxrCKMJ_JjrS-E3vKHgxPZVYFP6yaauKRjwfbL_y4lTs_CAo-B3BadFUd-tsFNW2r4_J7SPbsZRNY0A4-HtxfPpsgcUlZrXNd9y4sX9zjgF5h3lSUkaNVHwb5DVqUhHC2e9bvPIavT8JgXHWC2es6mCp_UKsVP9E3O93G7EovL8QTMHa3fwkcek0rDDC6IrpkxxTA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/wallet/balance": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Balances",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_dybnflvn4gvlx"
+      }
+    },
+    "/open/withdraw/create": {
+      "post": {
+        "summary": "Withdraw create",
+        "deprecated": false,
+        "description": "- Требуемый уровень доступа: **WITHDRAW**\n\n**Лимиты запросов**: 5 в секунду\n\n\n\n\n***Код токена пример:** BNBBEP20, BTCBEP20, USDCBEP20, USDTBEP20, DAI, DAIBEP20, BTC, ETH, USDCERC20, USDTERC20, LTC, MATIC, USDTPOLYGON, TON, TRX, USDTTRC20\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12AZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "обязательный, если coin и chain не заполнены если заполнены code, coin и chain - приоритет у code - Код токена (apiFormat из <https://api.rapira.net/open/token>)*"
+                  },
+                  "coin": {
+                    "type": "string",
+                    "description": "обязательный, если code не заполнен\tНазвание монеты (coinId из <https://api.rapira.net/open/token>)"
+                  },
+                  "memo": {
+                    "type": "string",
+                    "description": "тег назначения"
+                  },
+                  "chain": {
+                    "type": "string",
+                    "description": "обязательный, если code не заполнен\tНазвание сети (chainId из <https://api.rapira.net/open/token>)"
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "адрес кошелька"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "description": "сумма без комиссии"
+                  },
+                  "nonce": {
+                    "type": "integer",
+                    "description": "уникальный идентификатор операции"
+                  },
+                  "conversionDetails": {
+                    "type": "object",
+                    "properties": {
+                      "conversionEnabled": {
+                        "type": "boolean",
+                        "description": "возможность конвертации. По умолчанию false"
+                      },
+                      "convertFromCurrency": {
+                        "type": "string",
+                        "description": "не обязательный, если conversionDetails.conversionEnabled = false. Валюта из которой будет конвертация (USDT)"
+                      },
+                      "enoughCoinPayment": {
+                        "type": "boolean",
+                        "description": "не конвертировать, если достаточно на балансе указанной к выводу валюты в coin. По умолчанию false"
+                      }
+                    },
+                    "description": "настройка автоконвертации"
+                  }
+                },
+                "required": [
+                  "code",
+                  "coin",
+                  "chain",
+                  "address",
+                  "amount",
+                  "nonce"
+                ]
+              },
+              "example": {
+                "code": "TRX",
+                "coin": "TRX",
+                "chain": "TRX",
+                "address": "TVL6KUoWU9MFnpRnvKFQrbpDkDnT8t5c",
+                "amount": "11",
+                "nonce": 1718127860527,
+                "memo": "112312",
+                "conversionDetails": {
+                  "conversionEnabled": true,
+                  "convertFromCurrency": "USDT",
+                  "enoughCoinPayment": false
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "withdrawRecordId": 162627
+                    }
+                  },
+                  "2": {
+                    "summary": "Сумма для обмена меньше минимальной",
+                    "value": {
+                      "code": 500,
+                      "message": "Cant ensure enough balance"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Токен не поддерживает вывод",
+                    "value": {
+                      "code": 400,
+                      "message": "Withdraw disabled for token by this code"
+                    }
+                  },
+                  "2": {
+                    "summary": "Недостаточно средств, отключена автоконвертация",
+                    "value": {
+                      "code": 400,
+                      "message": "Недостаточно средств на балансе"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "API ключ не поддерживает выводы",
+                    "value": {
+                      "data": null,
+                      "code": 403,
+                      "message": "Access Denied",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Неуникальный nonce",
+                    "value": {
+                      "code": 500,
+                      "message": "Cant verify the request uniqueness"
+                    }
+                  },
+                  "2": {
+                    "summary": "Недостаточно средств для конвертации",
+                    "value": {
+                      "code": 500,
+                      "message": "Not enough conversion balance"
+                    }
+                  },
+                  "3": {
+                    "summary": "Нельзя обменять указанную валюту",
+                    "value": {
+                      "code": 500,
+                      "message": "Cant calculate amount for buy"
+                    }
+                  },
+                  "4": {
+                    "summary": "Сумма для обмена меньше минимальной",
+                    "value": {
+                      "code": 500,
+                      "message": "Cant ensure enough balance"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_dkmim0z6poau"
+      }
+    },
+    "/open/withdraw/crypto/history": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Withdraw crypto history",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9..ad0peTBvurTvZI_AZNqEiH2lL8PoOL9-m5ZL4uFt0Vf5LACJzIYIHArZvqkmiZEWRFUSzjjaN18dNeoLLx_Ws8zste9RPBZ9hwS0eADo_AK8K2MavtRPsWzICnqvXg2ycX1V78QXM7WahCKg6yyX-XKWObxfwdwZZ4LrCwwNceg02Mzg17FrDrVYkkyIZSTs4WS67QWDpbujnKYp0uhG8d22qiNUN-akV8uN8dy3vd1P1WOkMdQLV3gNeFpgpzqzeZVFM1NZ9Txfk2b9cmvb8wHCOmUJwYUWtvegAORjI3Job9lN4rHTTowoAXq8l5cd6gCRfRAgITTdxbWAgxIq-w"
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "1"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/withdraw/crypto/history/{withdraw_id}": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Withdraw crypto history Record",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMDg2MzQ5MywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.ad0peTBvurTvZI_AZNqEiH2lL8PoOL9--XKWObxfwdwZZ4LrCwwNceg02Mzg17FrDrVYkkyIZSTs4WS67QWDpbujnKYp0uhG8d22qiNUN-akV8uN8dy3vd1P1WOkMdQLV3gNeFpgpzqzeZVFM1NZ9Txfk2b9cmvb8wHCOmUJwYUWtvegAORjI3Job9lN4rHTTowoAXq8l5cd6gCRfRAgITTdxbWAgxIq-w"
+          },
+          {
+            "name": "withdraw_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/withdraw/fiat/history": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Withdraw fiat history",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMDg2MzQ5MywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.ad0peTBvurTvZI_AZNqEiH2lL8PoOL9--XKWObxfwdwZZ4LrCwwNceg02Mzg17FrDrVYkkyIZSTs4WS67QWDpbujnKYp0uhG8d22qiNUN-akV8uN8dy3vd1P1WOkMdQLV3gNeFpgpzqzeZVFM1NZ9Txfk2b9cmvb8wHCOmUJwYUWtvegAORjI3Job9lN4rHTTowoAXq8l5cd6gCRfRAgITTdxbWAgxIq-w"
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "1"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/withdraw/fiat/history/{withdraw_id}": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Withdraw fiat history Record",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMDg2MzQ5MywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.-m5ZL4uFt0Vf5LACJzIYIHArZvqkmiZEWRFUSzjjaN18dNeoLLx_Ws8zste9RPBZ9hwS0eADo_AK8K2MavtRPsWzICnqvXg2ycX1V78QXM7WahCKg6yyX-XKWObxfwdwZZ4LrCwwNceg02Mzg17FrDrVYkkyIZSTs4WS67QWDpbujnKYp0uhG8d22qiNUN-akV8uN8dy3vd1P1WOkMdQLV3gNeFpgpzqzeZVFM1NZ9Txfk2b9cmvb8wHCOmUJwYUWtvegAORjI3Job9lN4rHTTowoAXq8l5cd6gCRfRAgITTdxbWAgxIq-w"
+          },
+          {
+            "name": "withdraw_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_3i20dri24lyj0w9kt"
+      }
+    },
+    "/open/withdrawcode/apply": {
+      "post": {
+        "summary": "Create rCode",
+        "deprecated": false,
+        "description": "Создать код для передачи средств другому пользователю биржи\nПосле создания указанная валюта в указанной сумме будет заморожена в кошельке и списана после активации другим пользователем или возвращена на баланс при активации этим же аккаунтом\n\nТребуемый уровень доступа: **WITHDRAW**",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNTQ5NSIsImV4cCI6MTcyNjgyMDE3MywiYXBpX2tpZCI6ImIyMjFjNzIwLWIwNDgtNGZhNC1iNWQxLTQwZThlZTc1YWZkYSJ9.gW1eRIcPPK_YhXAxY9yWsXwKzgrsw7w1dOTLqmwMUHg0tNlH7wFyh4tBKyRO_8Cyd_qrxFVqEeEfdGyYboXvzS5h0Wo3VvuA46vhp8QusZ-X5dde0lYTUvYTdBsC4Th0O5wKQkEPYUdUKhTCafpM-NllHTZLjE0OSYiikKrnuumaRxlmh95TpL0o82DU_x-WCYvkM3aRjOtWfqZBXdYlZYvaPbeYLLy60jLijw2mqOLF71iMJr1MLy1iiOJWPKOZlxJLQwxaVJ4WFeYMiilNb4aCOrBP8UCgOyBSmLCSfrXV2__HZaeQWqgtITVqHbuqKwobGWdgwC9ZBlf9-nA",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "unit": {
+                    "description": "Валюта списания (RUB, USDT, BTC, ETC и др)",
+                    "example": "RUB",
+                    "type": "string"
+                  },
+                  "amount": {
+                    "description": "Сумма списания",
+                    "example": "10000",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "unit",
+                  "amount"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "data": {
+                        "unit": "RUB",
+                        "dealTime": null,
+                        "withdrawCode": "8866BA7F8F24C0973C2986BB95B4A02",
+                        "rmemberId": null,
+                        "createTime": "2024-09-18 17:48:31",
+                        "remark": null,
+                        "id": 35299,
+                        "withdrawAmount": 10000,
+                        "memberId": 16200,
+                        "status": "PROCESSING"
+                      },
+                      "code": 0,
+                      "message": "success",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Сумма к выводу меньше минимальной",
+                    "value": {
+                      "code": 400,
+                      "message": "Минимальная сумма вывода должна быть больше или равна 1"
+                    }
+                  },
+                  "2": {
+                    "summary": "Превышена максимальная сумма к выводу",
+                    "value": {
+                      "code": 400,
+                      "message": "Максимальная сумма вывода должна быть меньше или равна 15000000"
+                    }
+                  },
+                  "3": {
+                    "summary": "Валюта указана неверно",
+                    "value": {
+                      "code": 400,
+                      "message": "Данная валюта запрещена"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Недостаточно средств",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Недостаточно средств на балансе",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "2": {
+                    "summary": "Превышен дневной лимит",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Сумма больше оставшегося дневного лимита",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "3": {
+                    "summary": "Валюта не поддерживает создание rCode",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Эта валюта не поддерживает снятие средств",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_1rx21g15m193ms8h"
+      }
+    },
+    "/open/withdrawcode/deposit/history": {
+      "post": {
+        "summary": "rCode deposit history",
+        "deprecated": false,
+        "description": "Получить историю всех зачисленных на баланс rcode с заданными фильтрами.\n\nТребуемый уровень доступа: **READONLY**\n\n**status может иметь следующие значения:**\n\n- PROCESSING - код активен, можно использовать\n- SUCCESS - код использован",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "jwt токен",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjIwMCIsImV4cCI6MTc1MTY0MDczNywiYXBpX2tpZCI6ImZiNGUwOTcyLTU2ZjMtNDgxYS1iNWZjLTAxOTNlMzU1MTBkMyJ9.NQhnHmcQE12Ee-YOBIgjjQuhgi8EgTTgwySu656IQdMp7ii4361btKPex94lDdUywnVJ6YcxP9oyilsqdJyOYDQQaCSu7hQiLtRz_dUnpPb9LusR8rzOHcGIDX4Rka1-z0sP5bg-Xu3oBfo7qJb4gnhmEroJ1BtCFkpCsEPJaK9kNfD7ijSbOgwbrHafhBGFckbHcgiHUIRwsVg9fhABOP2w1u7Crq-wr7TrQse1wvY_iZFpIDLFgwEsS0zTPxCxqf4C4BbEQ8kaIFqftroYkk0UH6BPzwki0L6Dh_ws0_GEPu9UCjMIEEvm45Vr_wjuY5-OnNgNg2vMvovpQ",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "coin": {
+                    "type": "string",
+                    "description": "Валюта, в которой было списание/зачисление ((RUB, USDT, BTC, ETC и др))"
+                  },
+                  "startAmount": {
+                    "type": "number",
+                    "description": "Сумма от"
+                  },
+                  "endAmount": {
+                    "type": "number",
+                    "description": "Сумма до"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "Статус кода (SUCCESS/PROCESSING)"
+                  },
+                  "addrOrTxIdPart": {
+                    "type": "string",
+                    "description": "Часть самого кода"
+                  },
+                  "startCreationTime": {
+                    "type": "string",
+                    "description": "Дата создания от",
+                    "x-apifox-mock": "@datetime"
+                  },
+                  "endCreationTime": {
+                    "type": "string",
+                    "description": "Дата создания до",
+                    "x-apifox-mock": "@datetime"
+                  }
+                },
+                "x-apifox-orders": [
+                  "coin",
+                  "startAmount",
+                  "endAmount",
+                  "status",
+                  "addrOrTxIdPart",
+                  "startCreationTime",
+                  "endCreationTime"
+                ]
+              },
+              "example": {
+                "coin": "RUB",
+                "startAmount": 0,
+                "endAmount": 9999,
+                "status": "SUCCESS",
+                "addrOrTxIdPart": "5",
+                "startCreationTime": "2024-06-30 13:12:10",
+                "endCreationTime": "2025-06-30 13:12:10"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "description": "net.rapira.trade.commons.client.uc_client.dto.response.WithdrawCodeHistoryResponse",
+                        "type": "object",
+                        "properties": {
+                          "coinSymbol": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "withdrawAmount": {
+                            "type": "number",
+                            "description": ""
+                          },
+                          "arrivedAmount": {
+                            "type": "number",
+                            "description": ""
+                          },
+                          "createTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "dealTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "withdrawCode": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "remark": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "rechargeMemberId": {
+                            "type": "integer",
+                            "description": "",
+                            "format": "int64"
+                          }
+                        },
+                        "x-apifox-orders": [
+                          "coinSymbol",
+                          "withdrawAmount",
+                          "arrivedAmount",
+                          "createTime",
+                          "dealTime",
+                          "status",
+                          "withdrawCode",
+                          "remark",
+                          "rechargeMemberId"
+                        ]
+                      },
+                      "description": ""
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalElements": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "content",
+                    "currentPage",
+                    "totalPages",
+                    "totalElements"
+                  ]
+                },
+                "example": {
+                  "content": [
+                    {
+                      "coinSymbol": "RUB",
+                      "withdrawAmount": 1000,
+                      "createTime": "2025-06-30 13:12:10",
+                      "dealTime": "2025-06-30 13:12:58",
+                      "status": "SUCCESS",
+                      "withdrawCode": "2ABE5E0ED89A3B2881F64336F444839E"
+                    },
+                    {
+                      "coinSymbol": "RUB",
+                      "withdrawAmount": 1000,
+                      "createTime": "2025-06-30 13:04:14",
+                      "dealTime": "2025-06-30 13:05:50",
+                      "status": "SUCCESS",
+                      "withdrawCode": "06C412797B7D64E7E2791E0F69DA97CA"
+                    }
+                  ],
+                  "currentPage": 1,
+                  "totalPages": 1,
+                  "totalElements": 2
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_pjhrgimcnjyv3v"
+      }
+    },
+    "/open/withdrawcode/info/{withdrawCode}": {
+      "get": {
+        "summary": "rCode details",
+        "deprecated": false,
+        "description": "Получить информацию по конкретному rCode\n\nТребуемый уровень доступа: **READONLY**\n\n**status может иметь следующие значения:**\n\n- PROCESSING - код активен, можно использовать\n- SUCCESS - код использован",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "withdrawCode",
+            "in": "path",
+            "description": "rCode",
+            "required": true,
+            "example": "88865B3352071315F8857278227438",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12ZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "data": {
+                        "unit": "RUB",
+                        "dealTime": null,
+                        "withdrawCode": "88865B3520713105F88757278227438",
+                        "rmemberId": null,
+                        "createTime": "2024-09-18 17:57:35",
+                        "remark": null,
+                        "id": 35303,
+                        "withdrawAmount": 300000,
+                        "memberId": 16200,
+                        "status": "PROCESSING"
+                      },
+                      "code": 0,
+                      "message": "Успешно",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Incorrect rCode",
+                    "value": {
+                      "code": 400,
+                      "message": "Cant find withdrawCode"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Код не существует",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Код пополнения не существует",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_1rx21g15m193ms8h"
+      }
+    },
+    "/open/withdrawcode/recharge/{withdrawCode}": {
+      "post": {
+        "summary": "Use rCode",
+        "deprecated": false,
+        "description": "Использовать rCode - произвести пополнение баланса с помощью кода\nИли сделать возврат средств, если активирован собственный rCode\n\nТребуемый уровень доступа: **READONLY**",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "withdrawCode",
+            "in": "path",
+            "description": "rCode",
+            "required": true,
+            "example": "88865B33520713105F88757278227438",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjM4OCIsImV4cCI6MTcyMTQwMDgwMywiYXBpX2tpZCI6ImU3YTcyZWU5LWYwZjYtNDYzYi05ZjEzLWFiNzNlOWQzMTY3OCJ9.iessLdo-hy-FW_4wLVqxitj03SGsZ3qgaQbVWpgXKyzf9-1CiqIvDyTqTilKJNDGow9N557zcPgHo0QMO1K7HP-xFarRCC7pfPZbE0dVZGIkX11Zhbp7G8j3DYxOhn6FS2QP1ycfXwMajs1lsLW897D0vOIQl1WLGq0ZfXjtJ6IG5t6ovj0fSBJRlWfF2hwFjNr5xyyexQBsWl-PuD6kv6PtSHkzKeMPHmGhOmic1R-imppJoDLVMi9AB7aaDq71LMI109MoubH_utbVLKCAw6FML2b48uIffHtxqdVOD_3ICI_i7e9vDbMBJpIes9TUmw12AZArbtsz_c3bSlcDdQ",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "result": "success"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "The code has been used or deleted",
+                    "value": {
+                      "code": 400,
+                      "message": "The code has been used or deleted"
+                    }
+                  },
+                  "2": {
+                    "summary": "rCode does not exist",
+                    "value": {
+                      "code": 400,
+                      "message": "Recharge code does not exist"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Код уже использован",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Код был использован или удален",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  },
+                  "2": {
+                    "summary": "Превышен суточный лимит",
+                    "value": {
+                      "data": null,
+                      "code": 500,
+                      "message": "Сумма больше оставшегося дневного лимита",
+                      "totalPage": null,
+                      "totalElement": null,
+                      "isWorking": 1
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_1rx21g15m193ms8h"
+      }
+    },
+    "/open/withdrawcode/withdraw/history": {
+      "post": {
+        "summary": "rCode withdraw history",
+        "deprecated": false,
+        "description": "Получить историю всех созданных пользователем rcode с заданными фильтрами.\n\nТребуемый уровень доступа: **READONLY**\n\n**status может иметь следующие значения:**\n\n- PROCESSING - код активен, можно использовать\n- SUCCESS - код использован",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": 10,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "jwt токен",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNjIwMCIsImV4cCI6MTc1MTY0MDczNywiYXBpX2tpZCI6ImZiNGUwOTcyLTU2ZjMtNDgxYS1iNWZjLTAxOTNlMzU1MTBkMyJ9.NQhnHmcQE12Ee-YOBIgjjQuhgi8EgTTgwySu656IQdMp7ii4361btKPex94lDdUywnVJ6YcxP9oyilsqdJyOYDQQaCSu7hQiLtRz_dUnpPb9LusR8rzOHcGIDX4Rka1-z0sP5bg-Xu3oBfo7qJb4gnhmEroJ1BtCFkpCsEPJaK9kNfD7ijSbOgwbrHafhBGFckbHcgiHUIRwsVg9fhABOP2w1u7Crq-wr7TrQse1wvY_iZFpIDLFgwEsS0zTPxCxqf4C4BbEQ8kaIFqftroYkk0UH6BPzwki0L6Dh_ws0_GEPu9UCjMIEEvm45Vr_wjuY5-OnNgNUvovpQ",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "coin": {
+                    "type": "string",
+                    "description": "Валюта, в которой было списание/зачисление ((RUB, USDT, BTC, ETC и др))"
+                  },
+                  "startAmount": {
+                    "type": "number",
+                    "description": "Сумма от"
+                  },
+                  "endAmount": {
+                    "type": "number",
+                    "description": "Сумма до"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "Статус кода (SUCCESS/PROCESSING)"
+                  },
+                  "addrOrTxIdPart": {
+                    "type": "string",
+                    "description": "Часть самого кода"
+                  },
+                  "startCreationTime": {
+                    "type": "string",
+                    "description": "Дата создания от",
+                    "x-apifox-mock": "@datetime"
+                  },
+                  "endCreationTime": {
+                    "type": "string",
+                    "description": "Дата создания до",
+                    "x-apifox-mock": "@datetime"
+                  }
+                },
+                "x-apifox-orders": [
+                  "coin",
+                  "startAmount",
+                  "endAmount",
+                  "status",
+                  "addrOrTxIdPart",
+                  "startCreationTime",
+                  "endCreationTime"
+                ]
+              },
+              "example": {
+                "coin": "RUB",
+                "startAmount": 0,
+                "endAmount": 9999,
+                "status": "SUCCESS",
+                "addrOrTxIdPart": "5",
+                "startCreationTime": "2024-06-30 13:12:10",
+                "endCreationTime": "2025-06-30 13:12:10"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "description": "net.rapira.trade.commons.client.uc_client.dto.response.WithdrawCodeHistoryResponse",
+                        "type": "object",
+                        "properties": {
+                          "coinSymbol": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "withdrawAmount": {
+                            "type": "number",
+                            "description": ""
+                          },
+                          "arrivedAmount": {
+                            "type": "number",
+                            "description": ""
+                          },
+                          "createTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "dealTime": {
+                            "type": "string",
+                            "description": "",
+                            "x-apifox-mock": "@datetime"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "withdrawCode": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "remark": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "rechargeMemberId": {
+                            "type": "integer",
+                            "description": "",
+                            "format": "int64"
+                          }
+                        },
+                        "x-apifox-orders": [
+                          "coinSymbol",
+                          "withdrawAmount",
+                          "arrivedAmount",
+                          "createTime",
+                          "dealTime",
+                          "status",
+                          "withdrawCode",
+                          "remark",
+                          "rechargeMemberId"
+                        ]
+                      },
+                      "description": ""
+                    },
+                    "currentPage": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "totalElements": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "content",
+                    "currentPage",
+                    "totalPages",
+                    "totalElements"
+                  ]
+                },
+                "example": {
+                  "content": [
+                    {
+                      "coinSymbol": "RUB",
+                      "withdrawAmount": 1000,
+                      "createTime": "2025-06-30 13:12:10",
+                      "dealTime": "2025-06-30 13:12:58",
+                      "status": "SUCCESS",
+                      "withdrawCode": "7ABE5E0ED89A3B2881F64336F444839E"
+                    },
+                    {
+                      "coinSymbol": "RUB",
+                      "withdrawAmount": 1000,
+                      "createTime": "2025-06-30 13:04:14",
+                      "dealTime": "2025-06-30 13:05:50",
+                      "status": "SUCCESS",
+                      "withdrawCode": "06C412797B7DC4E7E2791E0F69DA97CA"
+                    }
+                  ],
+                  "currentPage": 1,
+                  "totalPages": 1,
+                  "totalElements": 2
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_4q3f0fmcnjxkok"
+      }
+    },
+    "/rapira_19oymblly0u44h/open/deposit/records": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get deposits",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pageNo": {
+                    "type": "integer",
+                    "example": "0"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "example": "10"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer {{JWT}}"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "btc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "x-source-identifier": "rapira_19oymblly0u44h"
+      },
+      "x-original-path": "/open/deposit/records"
+    },
+    "/rapira_1k00l17msm193kjh7/market/exchange-plate-mini": {
+      "post": {
+        "summary": "Get market depth",
+        "deprecated": false,
+        "description": "Получить стакан по указаннй валютной паре\n\nЕсли в response приходит {} - валютная пара указана неверно",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "symbol": {
+                    "description": "Валютная пара - symbol из https://api.rapira.net/market/symbol-thumb",
+                    "example": "BTC/USDT",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "symbol"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "ask": {
+                        "symbol": "BTC/USDT",
+                        "minAmount": 0.0002805,
+                        "highestPrice": 59500.1,
+                        "lowestPrice": 59516.1,
+                        "maxAmount": 5.643762,
+                        "items": [
+                          {
+                            "price": 59500.1,
+                            "amount": 1.1864385
+                          },
+                          {
+                            "price": 59500.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59500.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59501.4,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59501.5,
+                            "amount": 0.006103
+                          },
+                          {
+                            "price": 59501.7,
+                            "amount": 0.0428485
+                          },
+                          {
+                            "price": 59502,
+                            "amount": 0.0192185
+                          },
+                          {
+                            "price": 59502.1,
+                            "amount": 0.1142825
+                          },
+                          {
+                            "price": 59502.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59502.6,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59503,
+                            "amount": 0.0311355
+                          },
+                          {
+                            "price": 59503.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59503.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59503.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59504,
+                            "amount": 0.0005355
+                          },
+                          {
+                            "price": 59504.4,
+                            "amount": 0.028849
+                          },
+                          {
+                            "price": 59504.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59505,
+                            "amount": 0.000816
+                          },
+                          {
+                            "price": 59505.5,
+                            "amount": 0.000527
+                          },
+                          {
+                            "price": 59505.6,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59506,
+                            "amount": 0.0005355
+                          },
+                          {
+                            "price": 59506.2,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59506.8,
+                            "amount": 0.0002805
+                          },
+                          {
+                            "price": 59507.4,
+                            "amount": 0.0002805
+                          }
+                        ],
+                        "direction": "SELL"
+                      },
+                      "bid": {
+                        "symbol": "BTC/USDT",
+                        "minAmount": 0.000046,
+                        "highestPrice": 59498,
+                        "lowestPrice": 59483.6,
+                        "maxAmount": 12.3216175,
+                        "items": [
+                          {
+                            "price": 59498,
+                            "amount": 0.095473
+                          },
+                          {
+                            "price": 59497.6,
+                            "amount": 0.0386515
+                          },
+                          {
+                            "price": 59497,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59496.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59495.8,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59495.5,
+                            "amount": 0.035029
+                          },
+                          {
+                            "price": 59495.2,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59494.6,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59494,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59493.5,
+                            "amount": 0.0003565
+                          },
+                          {
+                            "price": 59493.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59493,
+                            "amount": 0.0007245
+                          },
+                          {
+                            "price": 59492.8,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59492.5,
+                            "amount": 0.000713
+                          },
+                          {
+                            "price": 59492.2,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59492.1,
+                            "amount": 0.19067
+                          },
+                          {
+                            "price": 59492,
+                            "amount": 0.3499795
+                          },
+                          {
+                            "price": 59491.6,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59491.5,
+                            "amount": 0.0114195
+                          },
+                          {
+                            "price": 59491,
+                            "amount": 0.001104
+                          },
+                          {
+                            "price": 59490.5,
+                            "amount": 0.0110285
+                          },
+                          {
+                            "price": 59490.4,
+                            "amount": 0.0003795
+                          },
+                          {
+                            "price": 59490,
+                            "amount": 0.0007245
+                          },
+                          {
+                            "price": 59489.8,
+                            "amount": 0.0003795
+                          }
+                        ],
+                        "direction": "BUY"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_1k00l17msm193kjh7"
+      },
+      "x-original-path": "/market/exchange-plate-mini"
+    },
+    "/rapira_4wcu9pm0z7qm32/open/deposit_address": {
+      "post": {
+        "summary": "Create address by currency",
+        "deprecated": false,
+        "description": "- Требуемый уровень доступа: **READONLY**\n\n**Список популярных валют:**\n\n**BTC-Bitcoin** — Bitcoin  \n**ETH-ERC20** — Ethereum  \n**TRX-TRC20** — Tron  \n**USDT-TRC20** — Tether TRC20 (сеть Tron)  \n**USDT-ERC20** — Tether ERC20 (сеть Ethereum)  \n**USDT-BEP20** — Tether BEP20 (сеть Binance Smart Chain)  \n**USDC-TRC20** — USDCoin TRC20 (сеть Tron)  \n**USDC-ERC20** — USDCoin ERC20 (сеть Ethereum)  \n**USDC-BEP20** — USDCoin BEP20 (сеть Binance Smart Chain)  \n**BTC-BEP20** — Bitcoin BEP20 (сеть Binance Smart Chain)  \n**BNB-BEP20** — Binance Coin  \n**LTC-Litecoin** — Litecoin  \n**DAI-ERC20** — DAI (сеть Ethereum)  \n**DAI-BEP20** — DAI (сеть Binance Smart Chain)\n\n{coinId}-{displayName} из https://api.rapira.net/open/token\n\n**Response**\nЕсли address = null, то это означает, что адрес еще создается. Используйте эндпоинт для получения актуального адреса для депозита.\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "Доступно два вида форматов:\n\n1. **Код валюты**:  \n   BNBBEP20, BTCBEP20, USDCBEP20,  USDTBEP20,  DAI,  DAIBEP20,  BTC, ETH, USDCERC20, USDTERC20, LTC, MATIC, USDTPOLYGON, TON, TRX, USDTTRC20 (apiFormat из https://api.rapira.net/open/token)  \n   Регистр не важен\n2. **Формат вида {coinId} или {coinId}-{chainId}**  \n   **coinId**: BTC, BNB, ETH, USDT, TON, TRX, USDC (регистр не важен) из https://api.rapira.net/open/token  \n   **chainId**: Bitcoin, BNB, TRC20, Toncoin,BEP20, ERC20 (регистр не важен) из https://api.rapira.net/open/token.",
+            "required": true,
+            "example": "usdt-trc20",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer {{JWT}}",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success",
+                    "value": {
+                      "address": "TRQpwDQdCsEphr3zNfwFNQQLAr43DJ2nyD",
+                      "blockchain": "Tron",
+                      "id": 407
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [],
+        "x-source-identifier": "rapira_4wcu9pm0z7qm32"
+      },
+      "x-original-path": "/open/deposit_address"
+    }
+  },
+  "components": {
+    "schemas": {
+      "LegalWalletTransactionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          },
+          "username": {
+            "type": "string",
+            "description": ""
+          },
+          "realName": {
+            "type": "string",
+            "description": ""
+          },
+          "amount": {
+            "type": "string",
+            "description": ""
+          },
+          "fee": {
+            "type": "string",
+            "description": ""
+          },
+          "feeType": {
+            "type": "string",
+            "description": "",
+            "enum": [
+              "FIXED",
+              "PERCENT",
+              "FREE"
+            ],
+            "x-apifox-enum": [
+              {
+                "value": "FIXED",
+                "name": "FIXED",
+                "description": "FIXED"
+              },
+              {
+                "value": "PERCENT",
+                "name": "PERCENT",
+                "description": "PERCENT"
+              },
+              {
+                "value": "FREE",
+                "name": "FREE",
+                "description": "FREE"
+              }
+            ]
+          },
+          "feeNum": {
+            "type": "string",
+            "description": ""
+          },
+          "address": {
+            "type": "string",
+            "description": ""
+          },
+          "amountWithFee": {
+            "type": "string",
+            "description": ""
+          },
+          "unit": {
+            "type": "string",
+            "description": ""
+          },
+          "status": {
+            "type": "string",
+            "description": ""
+          },
+          "creationTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "transactionId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "officePass": {
+            "description": "",
+            "type": "object",
+            "properties": {
+              "passId": {
+                "type": "integer",
+                "description": "",
+                "format": "int64"
+              },
+              "numOfVisits": {
+                "type": "integer",
+                "description": ""
+              },
+              "fullName": {
+                "type": "string",
+                "description": ""
+              },
+              "status": {
+                "type": "string",
+                "description": "",
+                "enum": [
+                  "ON_AGREE",
+                  "REVOKE",
+                  "DECLINED",
+                  "CURRENT",
+                  "REGISTER",
+                  "WORKED_OUT",
+                  "OVERDUE",
+                  "READY_TO_GIVE"
+                ],
+                "x-apifox-enum": [
+                  {
+                    "value": "ON_AGREE",
+                    "name": "ON_AGREE",
+                    "description": "ON_AGREE"
+                  },
+                  {
+                    "value": "REVOKE",
+                    "name": "REVOKE",
+                    "description": "REVOKE"
+                  },
+                  {
+                    "value": "DECLINED",
+                    "name": "DECLINED",
+                    "description": "DECLINED"
+                  },
+                  {
+                    "value": "CURRENT",
+                    "name": "CURRENT",
+                    "description": "CURRENT"
+                  },
+                  {
+                    "value": "REGISTER",
+                    "name": "REGISTER",
+                    "description": "REGISTER"
+                  },
+                  {
+                    "value": "WORKED_OUT",
+                    "name": "WORKED_OUT",
+                    "description": "WORKED_OUT"
+                  },
+                  {
+                    "value": "OVERDUE",
+                    "name": "OVERDUE",
+                    "description": "OVERDUE"
+                  },
+                  {
+                    "value": "READY_TO_GIVE",
+                    "name": "READY_TO_GIVE",
+                    "description": "READY_TO_GIVE"
+                  }
+                ]
+              },
+              "fromTime": {
+                "type": "string",
+                "description": "",
+                "x-apifox-mock": "@datetime"
+              },
+              "toTime": {
+                "type": "string",
+                "description": "",
+                "x-apifox-mock": "@datetime"
+              }
+            },
+            "x-apifox-orders": [
+              "passId",
+              "numOfVisits",
+              "fullName",
+              "status",
+              "fromTime",
+              "toTime"
+            ]
+          },
+          "rejectCause": {
+            "type": "string",
+            "description": ""
+          },
+          "paymentType": {
+            "description": "",
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "x-apifox-orders": [
+              "key"
+            ]
+          },
+          "data": {
+            "type": "string",
+            "description": ""
+          },
+          "bookBotUrl": {
+            "type": "string",
+            "description": ""
+          },
+          "processingUrl": {
+            "type": "string",
+            "description": ""
+          }
+        },
+        "x-apifox-orders": [
+          "id",
+          "type",
+          "username",
+          "realName",
+          "amount",
+          "fee",
+          "feeType",
+          "feeNum",
+          "address",
+          "amountWithFee",
+          "unit",
+          "status",
+          "creationTime",
+          "endTime",
+          "transactionId",
+          "officePass",
+          "rejectCause",
+          "paymentType",
+          "data",
+          "bookBotUrl",
+          "processingUrl"
+        ]
+      },
+      "MapObject": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "x-apifox-orders": [
+          "key"
+        ]
+      },
+      "OfficePass": {
+        "type": "object",
+        "properties": {
+          "passId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "numOfVisits": {
+            "type": "integer",
+            "description": ""
+          },
+          "fullName": {
+            "type": "string",
+            "description": ""
+          },
+          "status": {
+            "type": "string",
+            "description": ""
+          },
+          "paymentType": {
+            "description": "Уточнено",
+            "type": "object",
+            "properties": {
+              "paymentTypeId": {
+                "type": "integer",
+                "description": "",
+                "format": "int64"
+              },
+              "paymentTypeName": {
+                "type": "string",
+                "description": ""
+              },
+              "category": {
+                "type": "string",
+                "description": ""
+              }
+            },
+            "x-apifox-orders": [
+              "paymentTypeId",
+              "paymentTypeName",
+              "category"
+            ]
+          }
+        },
+        "x-apifox-orders": [
+          "passId",
+          "numOfVisits",
+          "fullName",
+          "status",
+          "paymentType"
+        ]
+      },
+      "OfficePassDTO": {
+        "type": "object",
+        "properties": {
+          "passId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "numOfVisits": {
+            "type": "integer",
+            "description": ""
+          },
+          "fullName": {
+            "type": "string",
+            "description": ""
+          },
+          "status": {
+            "type": "string",
+            "description": "",
+            "enum": [
+              "ON_AGREE",
+              "REVOKE",
+              "DECLINED",
+              "CURRENT",
+              "REGISTER",
+              "WORKED_OUT",
+              "OVERDUE",
+              "READY_TO_GIVE"
+            ],
+            "x-apifox-enum": [
+              {
+                "value": "ON_AGREE",
+                "name": "ON_AGREE",
+                "description": "ON_AGREE"
+              },
+              {
+                "value": "REVOKE",
+                "name": "REVOKE",
+                "description": "REVOKE"
+              },
+              {
+                "value": "DECLINED",
+                "name": "DECLINED",
+                "description": "DECLINED"
+              },
+              {
+                "value": "CURRENT",
+                "name": "CURRENT",
+                "description": "CURRENT"
+              },
+              {
+                "value": "REGISTER",
+                "name": "REGISTER",
+                "description": "REGISTER"
+              },
+              {
+                "value": "WORKED_OUT",
+                "name": "WORKED_OUT",
+                "description": "WORKED_OUT"
+              },
+              {
+                "value": "OVERDUE",
+                "name": "OVERDUE",
+                "description": "OVERDUE"
+              },
+              {
+                "value": "READY_TO_GIVE",
+                "name": "READY_TO_GIVE",
+                "description": "READY_TO_GIVE"
+              }
+            ]
+          },
+          "fromTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "toTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          }
+        },
+        "x-apifox-orders": [
+          "passId",
+          "numOfVisits",
+          "fullName",
+          "status",
+          "fromTime",
+          "toTime"
+        ]
+      },
+      "PaymentType": {
+        "type": "object",
+        "properties": {
+          "paymentTypeId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "paymentTypeName": {
+            "type": "string",
+            "description": ""
+          },
+          "category": {
+            "type": "string",
+            "description": ""
+          }
+        },
+        "x-apifox-orders": [
+          "paymentTypeId",
+          "paymentTypeName",
+          "category"
+        ]
+      },
+      "ResponseEntityFiatTransactionHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          },
+          "username": {
+            "type": "string",
+            "description": ""
+          },
+          "realName": {
+            "type": "string",
+            "description": ""
+          },
+          "amount": {
+            "type": "string",
+            "description": ""
+          },
+          "fee": {
+            "type": "string",
+            "description": ""
+          },
+          "feeType": {
+            "type": "string",
+            "description": ""
+          },
+          "feeNum": {
+            "type": "string",
+            "description": ""
+          },
+          "address": {
+            "type": "string",
+            "description": ""
+          },
+          "amountWithFee": {
+            "type": "string",
+            "description": ""
+          },
+          "unit": {
+            "type": "string",
+            "description": ""
+          },
+          "status": {
+            "type": "string",
+            "description": ""
+          },
+          "creationTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "transactionId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "officePass": {
+            "description": "",
+            "type": "object",
+            "properties": {
+              "passId": {
+                "type": "integer",
+                "description": "",
+                "format": "int64"
+              },
+              "numOfVisits": {
+                "type": "integer",
+                "description": ""
+              },
+              "fullName": {
+                "type": "string",
+                "description": ""
+              },
+              "status": {
+                "type": "string",
+                "description": ""
+              },
+              "paymentType": {
+                "description": "Уточнено",
+                "type": "object",
+                "properties": {
+                  "paymentTypeId": {
+                    "type": "integer",
+                    "description": "",
+                    "format": "int64"
+                  },
+                  "paymentTypeName": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": ""
+                  }
+                },
+                "x-apifox-orders": [
+                  "paymentTypeId",
+                  "paymentTypeName",
+                  "category"
+                ]
+              }
+            },
+            "x-apifox-orders": [
+              "passId",
+              "numOfVisits",
+              "fullName",
+              "status",
+              "paymentType"
+            ]
+          },
+          "rejectCause": {
+            "type": "string",
+            "description": ""
+          },
+          "data": {
+            "type": "string",
+            "description": ""
+          },
+          "paymentType": {
+            "description": "Уточнено",
+            "type": "object",
+            "properties": {
+              "paymentTypeId": {
+                "type": "integer",
+                "description": "",
+                "format": "int64"
+              },
+              "paymentTypeName": {
+                "type": "string",
+                "description": ""
+              },
+              "category": {
+                "type": "string",
+                "description": ""
+              }
+            },
+            "x-apifox-orders": [
+              "paymentTypeId",
+              "paymentTypeName",
+              "category"
+            ]
+          },
+          "bookBotUrl": {
+            "type": "string",
+            "description": ""
+          }
+        },
+        "x-apifox-orders": [
+          "id",
+          "type",
+          "username",
+          "realName",
+          "amount",
+          "fee",
+          "feeType",
+          "feeNum",
+          "address",
+          "amountWithFee",
+          "unit",
+          "status",
+          "creationTime",
+          "endTime",
+          "transactionId",
+          "officePass",
+          "rejectCause",
+          "data",
+          "paymentType",
+          "bookBotUrl"
+        ]
+      },
+      "ResponseEntityPaginationResponseLegalWalletTransactionDTO": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "description": "net.rapira.trade.commons.domain.member.dto.LegalWalletTransactionDTO",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "type": {
+                  "type": "string",
+                  "description": ""
+                },
+                "username": {
+                  "type": "string",
+                  "description": ""
+                },
+                "realName": {
+                  "type": "string",
+                  "description": ""
+                },
+                "amount": {
+                  "type": "string",
+                  "description": ""
+                },
+                "fee": {
+                  "type": "string",
+                  "description": ""
+                },
+                "feeType": {
+                  "type": "string",
+                  "description": "",
+                  "enum": [
+                    "FIXED",
+                    "PERCENT",
+                    "FREE"
+                  ],
+                  "x-apifox-enum": [
+                    {
+                      "value": "FIXED",
+                      "name": "FIXED",
+                      "description": "FIXED"
+                    },
+                    {
+                      "value": "PERCENT",
+                      "name": "PERCENT",
+                      "description": "PERCENT"
+                    },
+                    {
+                      "value": "FREE",
+                      "name": "FREE",
+                      "description": "FREE"
+                    }
+                  ]
+                },
+                "feeNum": {
+                  "type": "string",
+                  "description": ""
+                },
+                "address": {
+                  "type": "string",
+                  "description": ""
+                },
+                "amountWithFee": {
+                  "type": "string",
+                  "description": ""
+                },
+                "unit": {
+                  "type": "string",
+                  "description": ""
+                },
+                "status": {
+                  "type": "string",
+                  "description": ""
+                },
+                "creationTime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "endTime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "transactionId": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                },
+                "officePass": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "passId": {
+                      "type": "integer",
+                      "description": "",
+                      "format": "int64"
+                    },
+                    "numOfVisits": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "fullName": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "",
+                      "enum": [
+                        "ON_AGREE",
+                        "REVOKE",
+                        "DECLINED",
+                        "CURRENT",
+                        "REGISTER",
+                        "WORKED_OUT",
+                        "OVERDUE",
+                        "READY_TO_GIVE"
+                      ],
+                      "x-apifox-enum": [
+                        {
+                          "value": "ON_AGREE",
+                          "name": "ON_AGREE",
+                          "description": "ON_AGREE"
+                        },
+                        {
+                          "value": "REVOKE",
+                          "name": "REVOKE",
+                          "description": "REVOKE"
+                        },
+                        {
+                          "value": "DECLINED",
+                          "name": "DECLINED",
+                          "description": "DECLINED"
+                        },
+                        {
+                          "value": "CURRENT",
+                          "name": "CURRENT",
+                          "description": "CURRENT"
+                        },
+                        {
+                          "value": "REGISTER",
+                          "name": "REGISTER",
+                          "description": "REGISTER"
+                        },
+                        {
+                          "value": "WORKED_OUT",
+                          "name": "WORKED_OUT",
+                          "description": "WORKED_OUT"
+                        },
+                        {
+                          "value": "OVERDUE",
+                          "name": "OVERDUE",
+                          "description": "OVERDUE"
+                        },
+                        {
+                          "value": "READY_TO_GIVE",
+                          "name": "READY_TO_GIVE",
+                          "description": "READY_TO_GIVE"
+                        }
+                      ]
+                    },
+                    "fromTime": {
+                      "type": "string",
+                      "description": "",
+                      "x-apifox-mock": "@datetime"
+                    },
+                    "toTime": {
+                      "type": "string",
+                      "description": "",
+                      "x-apifox-mock": "@datetime"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "passId",
+                    "numOfVisits",
+                    "fullName",
+                    "status",
+                    "fromTime",
+                    "toTime"
+                  ]
+                },
+                "rejectCause": {
+                  "type": "string",
+                  "description": ""
+                },
+                "paymentType": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "key"
+                  ]
+                },
+                "data": {
+                  "type": "string",
+                  "description": ""
+                },
+                "bookBotUrl": {
+                  "type": "string",
+                  "description": ""
+                },
+                "processingUrl": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "x-apifox-orders": [
+                "id",
+                "type",
+                "username",
+                "realName",
+                "amount",
+                "fee",
+                "feeType",
+                "feeNum",
+                "address",
+                "amountWithFee",
+                "unit",
+                "status",
+                "creationTime",
+                "endTime",
+                "transactionId",
+                "officePass",
+                "rejectCause",
+                "paymentType",
+                "data",
+                "bookBotUrl",
+                "processingUrl"
+              ]
+            },
+            "description": ""
+          },
+          "currentPage": {
+            "type": "integer",
+            "description": ""
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": ""
+          },
+          "totalElements": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          }
+        },
+        "x-apifox-orders": [
+          "content",
+          "currentPage",
+          "totalPages",
+          "totalElements"
+        ]
+      },
+      "ResponseEntityPaginationResponseWithdrawCodeHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "description": "net.rapira.trade.commons.client.uc_client.dto.response.WithdrawCodeHistoryResponse",
+              "type": "object",
+              "properties": {
+                "coinSymbol": {
+                  "type": "string",
+                  "description": ""
+                },
+                "withdrawAmount": {
+                  "type": "number",
+                  "description": ""
+                },
+                "arrivedAmount": {
+                  "type": "number",
+                  "description": ""
+                },
+                "createTime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "dealTime": {
+                  "type": "string",
+                  "description": "",
+                  "x-apifox-mock": "@datetime"
+                },
+                "status": {
+                  "type": "string",
+                  "description": ""
+                },
+                "withdrawCode": {
+                  "type": "string",
+                  "description": ""
+                },
+                "remark": {
+                  "type": "string",
+                  "description": ""
+                },
+                "rechargeMemberId": {
+                  "type": "integer",
+                  "description": "",
+                  "format": "int64"
+                }
+              },
+              "x-apifox-orders": [
+                "coinSymbol",
+                "withdrawAmount",
+                "arrivedAmount",
+                "createTime",
+                "dealTime",
+                "status",
+                "withdrawCode",
+                "remark",
+                "rechargeMemberId"
+              ]
+            },
+            "description": ""
+          },
+          "currentPage": {
+            "type": "integer",
+            "description": ""
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": ""
+          },
+          "totalElements": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          }
+        },
+        "x-apifox-orders": [
+          "content",
+          "currentPage",
+          "totalPages",
+          "totalElements"
+        ]
+      },
+      "WithdrawCodeHistoryRequest": {
+        "type": "object",
+        "properties": {
+          "coin": {
+            "type": "string",
+            "description": "Валюта, в которой было списание/зачисление ((RUB, USDT, BTC, ETC и др))"
+          },
+          "startAmount": {
+            "type": "number",
+            "description": "Сумма от"
+          },
+          "endAmount": {
+            "type": "number",
+            "description": "Сумма до"
+          },
+          "status": {
+            "type": "string",
+            "description": "Статус кода (SUCCESS/PROCESSING)"
+          },
+          "addrOrTxIdPart": {
+            "type": "string",
+            "description": "Часть самого кода"
+          },
+          "startCreationTime": {
+            "type": "string",
+            "description": "Дата создания от",
+            "x-apifox-mock": "@datetime"
+          },
+          "endCreationTime": {
+            "type": "string",
+            "description": "Дата создания до",
+            "x-apifox-mock": "@datetime"
+          }
+        },
+        "x-apifox-orders": [
+          "coin",
+          "startAmount",
+          "endAmount",
+          "status",
+          "addrOrTxIdPart",
+          "startCreationTime",
+          "endCreationTime"
+        ]
+      },
+      "WithdrawCodeHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "coinSymbol": {
+            "type": "string",
+            "description": ""
+          },
+          "withdrawAmount": {
+            "type": "number",
+            "description": ""
+          },
+          "arrivedAmount": {
+            "type": "number",
+            "description": ""
+          },
+          "createTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "dealTime": {
+            "type": "string",
+            "description": "",
+            "x-apifox-mock": "@datetime"
+          },
+          "status": {
+            "type": "string",
+            "description": ""
+          },
+          "withdrawCode": {
+            "type": "string",
+            "description": ""
+          },
+          "remark": {
+            "type": "string",
+            "description": ""
+          },
+          "rechargeMemberId": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          }
+        },
+        "x-apifox-orders": [
+          "coinSymbol",
+          "withdrawAmount",
+          "arrivedAmount",
+          "createTime",
+          "dealTime",
+          "status",
+          "withdrawCode",
+          "remark",
+          "rechargeMemberId"
+        ]
+      },
+      "key": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "securitySchemes": {
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      }
+    }
+  },
+  "x-sources": [
+    {
+      "identifier": "rapira",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira/openapi.json"
+    },
+    {
+      "identifier": "rapira_19gwu92rm8msa13b",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_19gwu92rm8msa13b/openapi.json"
+    },
+    {
+      "identifier": "rapira_19oym1l1lly0lf22",
+      "info": {
+        "title": "Get deposits",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_19oym1l1lly0lf22/openapi.json"
+    },
+    {
+      "identifier": "rapira_19oymblly0u44h",
+      "info": {
+        "title": "Crypto Merchant",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_19oymblly0u44h/openapi.json"
+    },
+    {
+      "identifier": "rapira_1k00l17msm193kjh7",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_1k00l17msm193kjh7/openapi.json"
+    },
+    {
+      "identifier": "rapira_1nq410lulpk4vk",
+      "info": {
+        "title": "RPR-5",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_1nq410lulpk4vk/openapi.json"
+    },
+    {
+      "identifier": "rapira_1rx21fugm193lwwx",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_1rx21fugm193lwwx/openapi.json"
+    },
+    {
+      "identifier": "rapira_1rx21g15m193ms8h",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_1rx21g15m193ms8h/openapi.json"
+    },
+    {
+      "identifier": "rapira_27moj11mnm9r0zdyl",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_27moj11mnm9r0zdyl/openapi.json"
+    },
+    {
+      "identifier": "rapira_3i20dri24lyj0w9kt",
+      "info": {
+        "title": "Exchangers API",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_3i20dri24lyj0w9kt/openapi.json"
+    },
+    {
+      "identifier": "rapira_45i1wk30m9ljiq43",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_45i1wk30m9ljiq43/openapi.json"
+    },
+    {
+      "identifier": "rapira_4dfvd133lwyxuv1k",
+      "info": {
+        "title": "OPEN-API",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_4dfvd133lwyxuv1k/openapi.json"
+    },
+    {
+      "identifier": "rapira_4q3f0fmcnjxkok",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_4q3f0fmcnjxkok/openapi.json"
+    },
+    {
+      "identifier": "rapira_4wcu9pm0z7qm32",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_4wcu9pm0z7qm32/openapi.json"
+    },
+    {
+      "identifier": "rapira_b2td1p2dmea6webh",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_b2td1p2dmea6webh/openapi.json"
+    },
+    {
+      "identifier": "rapira_dkmim0z6poau",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_dkmim0z6poau/openapi.json"
+    },
+    {
+      "identifier": "rapira_dybn2qlvn4icf8",
+      "info": {
+        "title": "Server Time",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_dybn2qlvn4icf8/openapi.json"
+    },
+    {
+      "identifier": "rapira_dybnflvn4gvlx",
+      "info": {
+        "title": "Balance",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_dybnflvn4gvlx/openapi.json"
+    },
+    {
+      "identifier": "rapira_k9a142dluug0b23",
+      "info": {
+        "title": "MARKET",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_k9a142dluug0b23/openapi.json"
+    },
+    {
+      "identifier": "rapira_ks50we12lly16rmr",
+      "info": {
+        "title": "JWT upd",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_ks50we12lly16rmr/openapi.json"
+    },
+    {
+      "identifier": "rapira_pjhrgimcnjyv3v",
+      "info": {
+        "title": "Open API",
+        "description": "",
+        "version": "1.0.0"
+      },
+      "source": ".api/apis/rapira_pjhrgimcnjyv3v/openapi.json"
+    }
+  ]
+}
