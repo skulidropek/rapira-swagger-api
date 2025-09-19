@@ -323,8 +323,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlBalanceResponse"
                 },
                 "example": {
                   "balanceAml": 123
@@ -332,6 +331,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -411,8 +420,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlCheckResponse"
                 },
                 "example": {
                   "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
@@ -501,8 +509,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlErrorResponse"
                 },
                 "examples": {
                   "2": {
@@ -522,6 +529,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -602,8 +619,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlCheckResponse"
                 },
                 "example": {
                   "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
@@ -692,8 +708,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlErrorResponse"
                 },
                 "examples": {
                   "2": {
@@ -713,6 +728,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -763,8 +788,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AmlCheckResponse"
                 },
                 "example": {
                   "address": "TRwjBNV4FpJypURGnzZNFHXYWoK5FXBw",
@@ -853,8 +877,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "example": {
                   "code": 500,
@@ -863,6 +886,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -957,7 +990,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrderHistoryResponse"
+                  "$ref": "#/components/schemas/DepositAddressResponse"
                 }
               }
             }
@@ -1004,10 +1037,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BalanceItem"
-                  }
+                  "$ref": "#/components/schemas/DepositAddressResponse"
                 }
               }
             }
@@ -1927,9 +1957,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "description": "net.rapira.trade.commons.domain.commoncore.api.MessageResult",
-                  "type": "object",
-                  "properties": {}
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpotFeeItem"
+                  }
                 },
                 "example": [
                   {
@@ -2319,8 +2350,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/MessageResponse"
                 },
                 "example": {
                   "message": "Успешно"
@@ -2334,8 +2364,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "2": {
@@ -2356,6 +2385,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -2573,8 +2612,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/WithdrawCreateResponse"
                 },
                 "examples": {
                   "1": {
@@ -2600,8 +2638,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -2628,8 +2665,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
                 },
                 "examples": {
                   "1": {
@@ -2653,8 +2689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -2920,8 +2955,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/WithdrawcodeApplyResponse"
                 },
                 "examples": {
                   "1": {
@@ -2956,8 +2990,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -2991,8 +3024,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -3032,6 +3064,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -3321,8 +3363,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/WithdrawcodeInfoResponse"
                 },
                 "examples": {
                   "1": {
@@ -3357,8 +3398,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -3378,8 +3418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -3467,8 +3506,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/WithdrawcodeRechargeResponse"
                 },
                 "examples": {
                   "1": {
@@ -3487,8 +3525,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -3515,8 +3552,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
                 },
                 "examples": {
                   "1": {
@@ -3545,6 +3581,16 @@
               }
             },
             "headers": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -3857,8 +3903,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/MarketDepthResponse"
                 },
                 "examples": {
                   "1": {
@@ -4143,8 +4188,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "$ref": "#/components/schemas/DepositAddressResponse"
                 },
                 "examples": {
                   "1": {
@@ -5945,6 +5989,494 @@
           "sort",
           "numberOfElements",
           "empty"
+        ],
+        "additionalProperties": false
+      },
+      "AccessDeniedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "nullable": true
+          },
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "totalPage": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "totalElement": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "isWorking": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "isWorking"
+        ],
+        "additionalProperties": false
+      },
+      "SimpleErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "AmlBalanceResponse": {
+        "type": "object",
+        "properties": {
+          "balanceAml": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "balanceAml"
+        ],
+        "additionalProperties": false
+      },
+      "AmlSignals": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "nullable": true
+        }
+      },
+      "CounterpartyInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "slug": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "AmlCheckResponse": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "chain": {
+            "type": "string"
+          },
+          "riskScore": {
+            "type": "number"
+          },
+          "signals": {
+            "$ref": "#/components/schemas/AmlSignals"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "asset": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pdfReport": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "dirtType": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addressDetailsData": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/CounterpartyInfo"
+          },
+          "createTime": {
+            "type": "string"
+          },
+          "tx": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "fiat_code_effective": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uuid": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "address",
+          "direction",
+          "chain",
+          "riskScore",
+          "signals",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "AmlErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "WithdrawCreateResponse": {
+        "type": "object",
+        "properties": {
+          "withdrawRecordId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "withdrawRecordId"
+        ],
+        "additionalProperties": false
+      },
+      "SpotFeeItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "level": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "makerFee": {
+            "type": "number"
+          },
+          "takerFee": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "level",
+          "symbol",
+          "makerFee",
+          "takerFee"
+        ],
+        "additionalProperties": false
+      },
+      "WithdrawcodeApplyData": {
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "dealTime": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "withdrawCode": {
+            "type": "string"
+          },
+          "rmemberId": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "createTime": {
+            "type": "string"
+          },
+          "remark": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "integer"
+          },
+          "withdrawAmount": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit",
+          "withdrawCode",
+          "createTime",
+          "id",
+          "withdrawAmount",
+          "memberId",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "WithdrawcodeApplyResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/WithdrawcodeApplyData"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "totalPage": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "totalElement": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "isWorking": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "code",
+          "message",
+          "isWorking"
+        ],
+        "additionalProperties": false
+      },
+      "WithdrawcodeInfoData": {
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "dealTime": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "withdrawCode": {
+            "type": "string"
+          },
+          "rmemberId": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "createTime": {
+            "type": "string"
+          },
+          "remark": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "integer"
+          },
+          "withdrawAmount": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit",
+          "withdrawCode",
+          "createTime",
+          "id",
+          "withdrawAmount",
+          "memberId",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "WithdrawcodeInfoResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/WithdrawcodeApplyData"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "totalPage": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "totalElement": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "isWorking": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "code",
+          "message",
+          "isWorking"
+        ],
+        "additionalProperties": false
+      },
+      "WithdrawcodeRechargeResponse": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "additionalProperties": false
+      },
+      "DepositAddressResponse": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "blockchain": {
+            "type": "string"
+          },
+          "memo": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "address",
+          "blockchain",
+          "id"
         ],
         "additionalProperties": false
       }
