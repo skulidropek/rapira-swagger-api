@@ -173,7 +173,7 @@
                       },
                       "bid": {
                         "symbol": "BTC/USDT",
-                        "minAmount": 0.000046,
+                        "minAmount": 4.6e-05,
                         "highestPrice": 59498,
                         "lowestPrice": 59483.6,
                         "maxAmount": 12.3216175,
@@ -1821,7 +1821,14 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MarketPair"
+                  }
+                }
+              }
             }
           }
         },
@@ -1853,7 +1860,11 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketRatesResponse"
+                }
+              }
             }
           }
         },
@@ -2184,7 +2195,11 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RapiraOrderItem"
+                }
+              }
             }
           }
         },
@@ -2213,13 +2228,37 @@
               "type": "string"
             },
             "example": "{{JWT}}"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page index (0-based)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderHistoryPage"
+                }
+              }
             }
           }
         },
@@ -2397,7 +2436,14 @@
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {}
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WalletBalanceItem"
+                  }
+                }
+              }
             }
           }
         },
@@ -3926,7 +3972,7 @@
                       },
                       "bid": {
                         "symbol": "BTC/USDT",
-                        "minAmount": 0.000046,
+                        "minAmount": 4.6e-05,
                         "highestPrice": 59498,
                         "lowestPrice": 59483.6,
                         "maxAmount": 12.3216175,
@@ -4339,22 +4385,22 @@
       },
       "MarketDepthResponse": {
         "type": "object",
-        "required": [
-          "code",
-          "bid",
-          "ask"
-        ],
         "properties": {
           "code": {
             "type": "integer"
           },
-          "bid": {
-            "$ref": "#/components/schemas/MarketDepthSide"
-          },
           "ask": {
-            "$ref": "#/components/schemas/MarketDepthSide"
+            "$ref": "#/components/schemas/MarketDepthSideDetailed"
+          },
+          "bid": {
+            "$ref": "#/components/schemas/MarketDepthSideDetailed"
           }
         },
+        "required": [
+          "code",
+          "ask",
+          "bid"
+        ],
         "additionalProperties": false
       },
       "JwtResponse": {
@@ -5433,6 +5479,474 @@
       "key": {
         "type": "object",
         "properties": {}
+      },
+      "MarketDepthEntry": {
+        "type": "object",
+        "properties": {
+          "price": {
+            "type": "number"
+          },
+          "amount": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "price",
+          "amount"
+        ],
+        "additionalProperties": false
+      },
+      "MarketDepthSideDetailed": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "maxAmount": {
+            "type": "number"
+          },
+          "minAmount": {
+            "type": "number"
+          },
+          "highestPrice": {
+            "type": "number"
+          },
+          "lowestPrice": {
+            "type": "number"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketDepthEntry"
+            }
+          }
+        },
+        "required": [
+          "direction",
+          "symbol",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "MarketPair": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "coinSymbol": {
+            "type": "string"
+          },
+          "baseSymbol": {
+            "type": "string"
+          },
+          "coinScale": {
+            "type": "integer"
+          },
+          "baseCoinScale": {
+            "type": "integer"
+          },
+          "fee": {
+            "type": "number"
+          },
+          "minVolume": {
+            "type": "number"
+          },
+          "minTurnover": {
+            "type": "number"
+          },
+          "exchangeable": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "symbol",
+          "coinSymbol",
+          "baseSymbol",
+          "coinScale",
+          "baseCoinScale",
+          "fee",
+          "minVolume",
+          "minTurnover",
+          "exchangeable"
+        ],
+        "additionalProperties": false
+      },
+      "MarketRateItem": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "open": {
+            "type": "number"
+          },
+          "high": {
+            "type": "number"
+          },
+          "low": {
+            "type": "number"
+          },
+          "close": {
+            "type": "number"
+          },
+          "chg": {
+            "type": "number"
+          },
+          "change": {
+            "type": "number"
+          },
+          "fee": {
+            "type": "number"
+          },
+          "lastDayClose": {
+            "type": "number"
+          },
+          "usdRate": {
+            "type": "number"
+          },
+          "baseUsdRate": {
+            "type": "number"
+          },
+          "askPrice": {
+            "type": "number"
+          },
+          "bidPrice": {
+            "type": "number"
+          },
+          "baseCoinScale": {
+            "type": "integer"
+          },
+          "coinScale": {
+            "type": "integer"
+          },
+          "quoteCurrencyName": {
+            "type": "string"
+          },
+          "baseCurrency": {
+            "type": "string"
+          },
+          "quoteCurrency": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol",
+          "open",
+          "high",
+          "low",
+          "close",
+          "chg",
+          "change",
+          "fee",
+          "lastDayClose",
+          "usdRate",
+          "baseUsdRate",
+          "askPrice",
+          "bidPrice",
+          "baseCoinScale",
+          "coinScale",
+          "quoteCurrencyName",
+          "baseCurrency",
+          "quoteCurrency"
+        ],
+        "additionalProperties": false
+      },
+      "MarketRatesResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketRateItem"
+            }
+          },
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "totalPage": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "totalElement": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isWorking": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "data",
+          "code",
+          "message",
+          "isWorking"
+        ],
+        "additionalProperties": false
+      },
+      "WalletBalanceItem": {
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "balance": {
+            "type": "string"
+          },
+          "frozenBalance": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit",
+          "name",
+          "balance",
+          "frozenBalance"
+        ],
+        "additionalProperties": false
+      },
+      "OrderTradeDetail": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "fee": {
+            "type": "number"
+          },
+          "time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "turnover": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "amount",
+          "price",
+          "fee",
+          "time",
+          "turnover"
+        ],
+        "additionalProperties": false
+      },
+      "RapiraOrderItem": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "orderId": {
+            "type": "string"
+          },
+          "fee": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          },
+          "percentFee": {
+            "type": "string"
+          },
+          "tradedAmount": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderTradeDetail"
+            }
+          },
+          "time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "turnover": {
+            "type": "number"
+          },
+          "memberId": {
+            "type": "integer"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol",
+          "amount",
+          "orderId",
+          "fee",
+          "type",
+          "percentFee",
+          "tradedAmount",
+          "price",
+          "details",
+          "time",
+          "turnover",
+          "memberId",
+          "direction",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "SortOrder": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "ignoreCase": {
+            "type": "boolean"
+          },
+          "nullHandling": {
+            "type": "string"
+          },
+          "ascending": {
+            "type": "boolean"
+          },
+          "descending": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "direction",
+          "property",
+          "ignoreCase",
+          "nullHandling",
+          "ascending",
+          "descending"
+        ],
+        "additionalProperties": false
+      },
+      "PageableObject": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "integer"
+          },
+          "pageSize": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "paged": {
+            "type": "boolean"
+          },
+          "unpaged": {
+            "type": "boolean"
+          },
+          "sort": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortOrder"
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "offset",
+          "paged",
+          "unpaged",
+          "sort"
+        ],
+        "additionalProperties": false
+      },
+      "OrderHistoryPage": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RapiraOrderItem"
+            }
+          },
+          "pageable": {
+            "$ref": "#/components/schemas/PageableObject"
+          },
+          "last": {
+            "type": "boolean"
+          },
+          "totalElements": {
+            "type": "integer"
+          },
+          "totalPages": {
+            "type": "integer"
+          },
+          "first": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortOrder"
+            }
+          },
+          "numberOfElements": {
+            "type": "integer"
+          },
+          "empty": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "content",
+          "pageable",
+          "last",
+          "totalElements",
+          "totalPages",
+          "first",
+          "size",
+          "number",
+          "sort",
+          "numberOfElements",
+          "empty"
+        ],
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
